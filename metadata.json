@@ -1,0 +1,6 @@
+{
+  "name": "Alphabet Educational Hub",
+  "description": "India's premium hub for Professional Handwriting Teacher Training, Calligraphy Excellence, and Student Cognitive Development since 2008.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
