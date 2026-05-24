@@ -31,22 +31,22 @@ export default function Footer() {
             </div>
 
             <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-light">
-              India’s pioneer luxury educational hub for premium handwriting development, classical broad-edge calligraphy training, and specialized Dysgraphia physical remedial support since 2008.
+              India's leading handwriting education and teacher training institute, empowering students, teachers, and aspiring educators through expert-designed programs since 2008. Based in Kakinada, Andhra Pradesh.
             </p>
 
             {/* Quick Contacts details */}
             <div className="space-y-2.5">
               <div className="flex items-center gap-2.5 text-xs text-slate-400">
                 <Phone className="w-3.5 h-3.5 text-brand-cyan" />
-                <span>+91 98485 55800 / +91 88863 56708</span>
+                <span>+91 90635 26196</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs text-slate-400">
                 <Mail className="w-3.5 h-3.5 text-brand-purple" />
-                <span>info@alphabetedu.in</span>
+                <span>hr@alphabeteducationalhub.com</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs text-slate-400">
                 <Clock className="w-3.5 h-3.5 text-pink-500" />
-                <span>9:00 AM - 6:00 PM (Monday - Saturday)</span>
+                <span>Santhi Nagar, Kakinada, AP – 533003</span>
               </div>
             </div>
           </div>
@@ -59,9 +59,8 @@ export default function Footer() {
 
             <nav className="flex flex-col gap-3 text-xs md:text-sm text-slate-400 font-light">
               <a href="#courses" className="hover:text-white transition-colors">Program Diplomas</a>
-              <a href="#styles" className="hover:text-white transition-colors">Cursive & Prints Scripts</a>
-              <a href="#styles" className="hover:text-white transition-colors">Copperplate Calligraphy</a>
-              <a href="#benefits" className="hover:text-white transition-colors">Dysgraphia Muscle Corrections</a>
+              <a href="#courses" className="hover:text-white transition-colors">Courses & Training</a>
+              <a href="#materials" className="hover:text-white transition-colors">Books & Materials</a>
               <a href="#workshops" className="hover:text-white transition-colors">Staff Development Summits</a>
             </nav>
           </div>
@@ -75,8 +74,8 @@ export default function Footer() {
             <nav className="flex flex-col gap-3 text-xs md:text-sm text-slate-400 font-light">
               <a href="#about" className="hover:text-white transition-colors">Our Legacy</a>
               <a href="#why-choose-us" className="hover:text-white transition-colors">The Methodology</a>
-              <a href="#materials" className="hover:text-white transition-colors">Syllabus Books</a>
-              <a href="#testimonials" className="hover:text-white transition-colors">Reviews & Audits</a>
+              <a href="#materials" className="hover:text-white transition-colors">Books & Materials</a>
+              <a href="#workshops" className="hover:text-white transition-colors">Workshops</a>
               <a href="#contact" className="hover:text-white transition-colors">Apply Admissions</a>
             </nav>
           </div>
@@ -88,7 +87,7 @@ export default function Footer() {
             </span>
 
             <div className="p-4 rounded-xl bg-white/3 border border-white/5 text-center">
-              <span className="block text-xl font-serif font-black text-white leading-none">18+</span>
+              <span className="block text-xl font-serif font-black text-white leading-none">15+</span>
               <span className="block text-[8px] tracking-wider uppercase font-extrabold text-slate-400 mt-2">
                 Years of Excellence
               </span>

@@ -15,11 +15,10 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
     { label: 'About', href: '#about' },
     { label: 'Why Us', href: '#why-choose-us' },
     { label: 'Courses', href: '#courses' },
-    { label: 'Writing Styles', href: '#styles' },
-    { label: 'Benefits', href: '#benefits' },
-    { label: 'Materials', href: '#materials' },
-    { label: 'Workshops', href: '#workshops' },
-    { label: 'Contact', href: 'https://wa.me/919848555800?text=Hi!%20I\'m%20interested%20in%20learning%20more%20about%20Alphabet%20Educational%20Hub.', isExternal: true },
+    { label: 'Books', href: '#materials' },
+    { label: 'Gallery', href: '#workshops' },
+    { label: 'Careers', href: '#careers' },
+    { label: 'Contact', href: 'https://wa.me/919063526196?text=Hi!%20I\'m%20interested%20in%20learning%20more%20about%20Alphabet%20Educational%20Hub.', isExternal: true },
   ];
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
       setIsScrolled(window.scrollY > 20);
 
       // Section highlighters on scroll
-      const sections = navItems.map(item => item.href.slice(1));
+      const sections = navItems.filter(item => !item.isExternal).map(item => item.href.slice(1));
       sections.push('hero');
 
       let currentSection = 'hero';
@@ -86,22 +85,34 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1 bg-white/3 p-1 rounded-full border border-white/5" id="nav-menu-desktop">
               {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target={item.isExternal ? '_blank' : undefined}
-                  rel={item.isExternal ? 'noopener noreferrer' : undefined}
-                  className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 relative ${
-                    !item.isExternal && activeSection === item.href.slice(1)
-                      ? 'text-white font-semibold'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {item.label}
-                  {!item.isExternal && activeSection === item.href.slice(1) && (
-                    <span className="absolute inset-0 bg-gradient-to-r from-brand-purple/20 to-brand-cyan/20 border border-brand-purple/35 -z-10 rounded-full" />
+                <div key={item.href} className="relative group">
+                  <a
+                    href={item.href}
+                    target={item.isExternal ? '_blank' : undefined}
+                    rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                    className={`block px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 relative ${
+                      !item.isExternal && activeSection === item.href.slice(1)
+                        ? 'text-white font-semibold'
+                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {item.label}
+                    {!item.isExternal && activeSection === item.href.slice(1) && (
+                      <span className="absolute inset-0 bg-gradient-to-r from-brand-purple/20 to-brand-cyan/20 border border-brand-purple/35 -z-10 rounded-full" />
+                    )}
+                  </a>
+                  {item.label === 'Courses' && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0d0a20]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2">
+                      {/* invisible bridge to keep hover active */}
+                      <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
+                      <a href="#courses" onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })} className="px-4 py-2.5 hover:bg-white/5 rounded-xl text-xs text-slate-300 hover:text-white transition-colors">Professional Diploma Course</a>
+                      <a href="#courses" onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })} className="px-4 py-2.5 hover:bg-white/5 rounded-xl text-xs text-slate-300 hover:text-white transition-colors">Foundation Level Course</a>
+                      <a href="#courses" onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })} className="px-4 py-2.5 hover:bg-white/5 rounded-xl text-xs text-slate-300 hover:text-white transition-colors">Expert Level Course</a>
+                      <a href="#courses" onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })} className="px-4 py-2.5 hover:bg-white/5 rounded-xl text-xs text-slate-300 hover:text-white transition-colors">Calligraphy & Creative Writing</a>
+                      <a href="#courses" onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })} className="px-4 py-2.5 hover:bg-white/5 rounded-xl text-xs text-slate-300 hover:text-white transition-colors">Dysgraphia Learning Support</a>
+                    </div>
                   )}
-                </a>
+                </div>
               ))}
             </nav>
 

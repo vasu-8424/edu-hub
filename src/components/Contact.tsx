@@ -10,13 +10,13 @@ export default function Contact() {
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [activeHub, setActiveHub] = useState('hyderabad');
+  const [activeHub, setActiveHub] = useState('kakinada');
 
   const hubLocations = [
-    { id: 'hyderabad', name: 'Hyderabad (Main Corporate Hub)', coordY: '60%', coordX: '45%', address: '2nd Floor, Elite Manor, Banjara Hills, Hyderabad, TS, India' },
-    { id: 'bangalore', name: 'Bangalore Center', coordY: '75%', coordX: '42%', address: '3rd Block, Jayanagar Central, Bengaluru, KA, India' },
-    { id: 'mumbai', name: 'Mumbai Affiliate', coordY: '55%', coordX: '28%', address: 'Regus Business Park, Bandra West, Mumbai, MH, India' },
-    { id: 'delhi', name: 'Delhi Partner Hub', coordY: '25%', coordX: '48%', address: 'Connaught Place, New Delhi, DL, India' }
+    { id: 'kakinada', name: 'Kakinada (Main Center)', coordY: '55%', coordX: '55%', address: 'D.No. 3-16B-93, Santhi Nagar, Kakinada, Andhra Pradesh, India. Pincode: 533003.' },
+    { id: 'hyderabad', name: 'Hyderabad Hub', coordY: '48%', coordX: '44%', address: 'Andhra Pradesh & Telangana Region — Contact for nearest associate center.' },
+    { id: 'vijayawada', name: 'Vijayawada Center', coordY: '56%', coordX: '48%', address: 'Andhra Pradesh — Contact our team for location details and schedule.' },
+    { id: 'visakhapatnam', name: 'Visakhapatnam Hub', coordY: '45%', coordX: '58%', address: 'Andhra Pradesh — Contact our team for location details and schedule.' }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,7 +27,7 @@ export default function Contact() {
     const message = encodeURIComponent(
       `Hi! I'm ${formData.name} and I'm interested in ${formData.inquiryType.replace(/-/g, ' ')} at Alphabet Educational Hub.\n\nMessage: ${formData.message}\n\nEmail: ${formData.email}`
     );
-    window.open(`https://wa.me/919848555800?text=${message}`, '_blank');
+    window.open(`https://wa.me/919063526196?text=${message}`, '_blank');
     
     setFormSubmitted(true);
     setTimeout(() => {
@@ -41,11 +41,14 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-xs font-bold tracking-[0.25em] text-cyan-400 uppercase bg-brand-cyan/10 px-4 py-1.5 rounded-full">
-            Connect In Realtime
+            Get In Touch
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-4">
-            Initiate Your Transformation Journey Today
+            Alphabet Educational Hub
           </h2>
+          <p className="text-sm md:text-base text-slate-400 font-light max-w-2xl mx-auto mt-4 leading-relaxed">
+            We are here to guide you on your journey toward handwriting excellence and professional teaching success.
+          </p>
           <div className="w-12 h-1 bg-gradient-to-r from-brand-cyan to-brand-purple mx-auto mt-6 rounded-full" />
         </div>
 
@@ -53,7 +56,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" id="floating-contact-info-cards">
           {/* Card 1 - Phone / WhatsApp */}
           <a
-            href="https://wa.me/919848555800?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Alphabet%20Educational%20Hub."
+            href="https://wa.me/919063526196?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Alphabet%20Educational%20Hub."
             target="_blank"
             rel="noopener noreferrer"
             className="glass-panel p-6 rounded-2xl flex items-center gap-4 group hover:border-brand-purple/20 transition-all duration-300 no-underline"
@@ -64,7 +67,7 @@ export default function Contact() {
             <div>
               <span className="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">WhatsApp / Hotline</span>
               <span className="block text-white font-serif font-black hover:text-brand-cyan transition-colors mt-0.5">
-                +91 98485 55800
+                +91 90635 26196
               </span>
               <span className="block text-[9px] text-slate-400 font-light mt-0.5">Tap to chat on WhatsApp</span>
             </div>
@@ -76,11 +79,11 @@ export default function Contact() {
               <Mail className="w-5 h-5" />
             </div>
             <div>
-              <span className="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Secure Mailroom</span>
-              <a href="mailto:info@alphabeteducationalhub.com" className="block text-white font-serif font-black hover:text-brand-cyan transition-colors mt-0.5" style={{ color: '#ffffff' }}>
-                info@alphabetedu.in
+              <span className="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Email Us</span>
+              <a href="mailto:hr@alphabeteducationalhub.com" className="block text-white font-serif font-black hover:text-brand-cyan transition-colors mt-0.5" style={{ color: '#ffffff' }}>
+                hr@alphabeteducationalhub.com
               </a>
-              <span className="block text-[9px] text-slate-400 font-light mt-0.5">Direct Response within 4 Hours</span>
+              <span className="block text-[9px] text-slate-400 font-light mt-0.5">We're here to help</span>
             </div>
           </div>
 
@@ -90,11 +93,11 @@ export default function Contact() {
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <span className="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Main Secretariat</span>
+              <span className="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Main Center</span>
               <span className="block text-white font-serif font-bold text-xs md:text-sm mt-0.5">
-                Banjara Hills, Hyderabad, India
+                Santhi Nagar, Kakinada, AP
               </span>
-              <span className="block text-[9px] text-slate-400 font-light mt-0.5">Associated Partner Network</span>
+              <span className="block text-[9px] text-slate-400 font-light mt-0.5">Pincode: 533003</span>
             </div>
           </div>
         </div>
@@ -114,7 +117,7 @@ export default function Contact() {
                     Inquiry Transmitted
                   </h3>
                   <p className="text-xs text-slate-400 max-w-sm mt-4 leading-relaxed font-light">
-                    Your inquiry has been successfully captured. Our academic support and executive coordinators will reach you within 4 business hours.
+                    Your inquiry has been successfully submitted. Our team at Alphabet Educational Hub will get back to you shortly.
                   </p>
                   <div className="w-16 h-[1px] bg-slate-800 my-8" />
                   <span className="text-[10px] tracking-widest font-mono text-brand-purple uppercase">
@@ -125,10 +128,10 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6 flex flex-col justify-between h-full">
                   <div>
                     <h3 className="font-serif text-2xl font-bold text-white tracking-tight mb-2">
-                      Inquire for Admissions
+                      Admissions Open for 2026
                     </h3>
                     <p className="text-xs text-slate-400 font-light leading-relaxed mb-6">
-                      Schedule a secure physical pen-holding analysis diagnostic session or file for professional teacher vocational certification details.
+                      Begin your transformation today with our Professional Handwriting teacher Training Programs. Enroll now and take the first step toward a confident, skilled, and successful handwriting journey.
                     </p>
 
                     <div className="space-y-5">
@@ -172,11 +175,16 @@ export default function Contact() {
                           onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                           className="w-full bg-[#0d0a20] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-cyan focus:bg-white/5 transition-all"
                         >
-                          <option value="teacher-training">Teacher Vocational Diploma Training</option>
-                          <option value="remedial-support">Children Handwriting Corrective (15 Hrs)</option>
-                          <option value="calligraphy">Artistic Calligraphy Masterclass</option>
-                          <option value="dysgraphia-therapy">Dysgraphia & Remedial Stroke Therapy</option>
-                          <option value="school-workshop">Institutional School Workshop Partnership</option>
+                          <option className="bg-[#8b5cf6] text-white" value="diploma">Professional Diploma Course (6 Months)</option>
+                          <option className="bg-[#8b5cf6] text-white" value="foundation">Foundation Level Handwriting Trainer Course</option>
+                          <option className="bg-[#8b5cf6] text-white" value="expert">Expert Level Handwriting Trainer Course</option>
+                          <option className="bg-[#8b5cf6] text-white" value="calligraphy">Calligraphy &amp; Creative Writing Training</option>
+                          <option className="bg-[#8b5cf6] text-white" value="dysgraphia">Dysgraphia Identification &amp; Learning Support</option>
+                          <option className="bg-[#8b5cf6] text-white" value="school-workshop">School Workshop</option>
+                          <option className="bg-[#8b5cf6] text-white" value="teacher-workshop">Teacher Training Workshop</option>
+                          <option className="bg-[#8b5cf6] text-white" value="books">Books &amp; Learning Materials</option>
+                          <option className="bg-[#8b5cf6] text-white" value="franchise">Franchise Opportunities</option>
+                          <option className="bg-[#8b5cf6] text-white" value="careers">Career Opportunities</option>
                         </select>
                       </div>
 
@@ -214,74 +222,42 @@ export default function Contact() {
             <div className="glass-panel p-8 rounded-3xl relative overflow-hidden flex-1 flex flex-col justify-between bg-black/60 shadow-2xl">
               <div>
                 <span className="text-[10px] font-mono font-bold text-brand-cyan tracking-wider uppercase">
-                  OPERATIONAL NETWORK MATRIX
+                  Our Locations
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-white tracking-tight mt-2 mb-4">
-                  Indian Educational Hub Nodes
+                  Find Us in Kakinada
                 </h3>
               </div>
 
-              {/* Graphic Constellation Map Representation */}
+              {/* Embedded Google Map */}
               <div 
-                className="relative h-[240px] md:h-[280px] bg-[#070519]/70 rounded-2xl border border-white/5 overflow-hidden my-6 flex items-center justify-center"
-                id="interactive-constellation-map"
+                className="relative h-[240px] md:h-[280px] rounded-2xl border border-white/5 overflow-hidden my-6 flex items-center justify-center bg-[#070519]/70"
+                id="google-map-embed"
               >
-                {/* Abstract Vector India Contour styling lines */}
-                <svg viewBox="0 0 200 300" fill="none" className="absolute h-full w-auto opacity-10 pointer-events-none stroke-slate-500">
-                  <path d="M100,20 L150,50 L180,100 L160,165 L130,220 L100,280 L70,240 L40,165 L30,100 L50,50 Z" strokeWidth="1" />
-                  <path d="M100,50 L130,90 M100,100 L80,160 M120,160 L100,220" strokeWidth="0.5" strokeDasharray="2,2" />
-                </svg>
-
-                {/* Subtle digital connecting vector lines drawing paths between hubs */}
-                <svg className="absolute inset-0 w-full h-full opacity-25">
-                  <line x1="45%" y1="60%" x2="42%" y2="75%" stroke="#8b5cf6" strokeWidth="1.5" strokeDasharray="3,3" />
-                  <line x1="45%" y1="60%" x2="28%" y2="55%" stroke="#06b6d4" strokeWidth="1.5" strokeDasharray="3,3" />
-                  <line x1="45%" y1="60%" x2="48%" y2="25%" stroke="#8b5cf6" strokeWidth="1.5" strokeDasharray="3,3" />
-                </svg>
-
-                {/* Active Hub node pulse ring */}
-                {hubLocations.map((loc) => (
-                  <button
-                    key={loc.id}
-                    onClick={() => setActiveHub(loc.id)}
-                    className="absolute group/node shrink-0 flex items-center justify-center"
-                    style={{ top: loc.coordY, left: loc.coordX }}
-                    aria-label={`Select ${loc.name}`}
-                  >
-                    <span className={`absolute inline-flex h-6 w-6 rounded-full opacity-60 animate-ping ${
-                      activeHub === loc.id ? 'bg-brand-cyan/40Scale pointer-events-none bg-brand-cyan' : 'bg-brand-purple/10'
-                    }`} />
-                    <span className={`relative rounded-full h-3.5 w-3.5 shadow-md border border-white transition-all duration-300 ${
-                      activeHub === loc.id
-                        ? 'bg-brand-cyan scale-125'
-                        : 'bg-brand-purple group-hover/node:bg-white'
-                    }`} />
-
-                    {/* Simple hover label text */}
-                    <span className="hidden sm:block absolute left-5 bg-glass-bg backdrop-blur-md text-[9px] font-mono font-black text-white px-2 py-0.5 rounded border border-white/10 opacity-0 group-hover/node:opacity-100 transition-opacity whitespace-nowrap">
-                      {loc.name.replace(' (Main Corporate Hub)', '').replace(' Center', '').replace(' Affiliate', '').replace(' Partner Hub', '')}
-                    </span>
-                  </button>
-                ))}
+                <iframe
+                  title="Alphabet Educational Hub Location"
+                  src="https://maps.google.com/maps?q=D.No.%203-16B-93,%20Santhi%20Nagar,%20Kakinada,%20Andhra%20Pradesh,%20India,%20533003&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.1) brightness(0.9)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
 
-              {/* Active Hub metadata card details panel */}
-              {(() => {
-                const currentHub = hubLocations.find(l => l.id === activeHub) || hubLocations[0];
-                return (
-                  <div className="p-4 rounded-xl bg-white/3 border border-white/5 transition-all duration-300" id="active-hub-details-card">
-                    <span className="text-[10px] font-mono font-bold text-brand-cyan tracking-wider uppercase mb-1 block">
-                      Active Operational Node
-                    </span>
-                    <h4 className="font-serif font-extrabold text-white text-sm md:text-base mb-1.5">
-                      {currentHub.name}
-                    </h4>
-                    <p className="text-xs text-slate-300 font-light leading-relaxed font-mono">
-                      {currentHub.address}
-                    </p>
-                  </div>
-                );
-              })()}
+              {/* Institute Address Details */}
+              <div className="p-4 rounded-xl bg-white/3 border border-white/5" id="active-hub-details-card">
+                <span className="text-[10px] font-mono font-bold text-brand-cyan tracking-wider uppercase mb-1 block">
+                  Main Corporate Hub
+                </span>
+                <h4 className="font-serif font-extrabold text-white text-sm md:text-base mb-1.5">
+                  Alphabet Educational Hub
+                </h4>
+                <p className="text-xs text-slate-300 font-light leading-relaxed font-mono">
+                  D.No. 3-16B-93, Santhi Nagar, Kakinada, Andhra Pradesh, India. Pincode: 533003.
+                </p>
+              </div>
 
               {/* Secure Footer items social anchors inside form panel */}
               <div className="flex gap-4 items-center justify-between mt-6 pt-4 border-t border-white/5">

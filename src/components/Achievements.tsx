@@ -17,42 +17,41 @@ export default function Achievements() {
     students: 0,
     teachers: 0,
     schools: 0,
-    transformations: 0,
   });
 
   const timelineData: TimelineItem[] = [
     {
       year: '2008',
-      title: 'The Foundation',
-      description: 'Alphabet Educational Hub is founded, launching specialized remedial worksheets for primary children to bridge key fine-motor gaps.',
+      title: 'A Trusted Name in Handwriting Excellence',
+      description: 'Building a strong legacy of educational transformation, creativity, and skill-based learning.',
       category: 'Inception',
       icon: <Calendar className="w-5 h-5" />,
     },
     {
       year: '2012',
-      title: 'State Curriculum Alignment',
-      description: 'Our proprietary handwriting workbook series is integrated as mandatory curriculum in 50+ central schools across South India.',
-      category: 'Corporate Growth',
+      title: 'Thousands of Remarkable Handwriting Transformations',
+      description: 'Creating visible improvements in writing speed, readability, confidence, concentration, and academic performance.',
+      category: 'Growth',
       icon: <School className="w-5 h-5" />,
     },
     {
       year: '2018',
-      title: 'Dysgraphia Therapeutics Introduced',
-      description: 'Partnered with pediatric neurologists to launch certified training modules targeting ADHD, Dysgraphia and writer’s cramp.',
-      category: 'Medical Research',
+      title: '200+ Schools Associated',
+      description: 'Collaborating with State Board, CBSE, ICSE, and International Schools to deliver quality handwriting education.',
+      category: 'Expansion',
       icon: <Award className="w-5 h-5" />,
     },
     {
       year: '2022',
-      title: 'Certified Franchise E-Learning Launch',
-      description: 'Unveiled state-of-the-art virtual vocational platforms, certifying 10,000+ housewives and students as professional tutors.',
-      category: 'Digital Innovation',
+      title: '20,000+ Teachers Empowered',
+      description: 'Trained aspiring educators and professionals through advanced Professional Handwriting Teacher Training Programs.',
+      category: 'Achievement',
       icon: <Star className="w-5 h-5" />,
     },
     {
       year: '2026',
-      title: 'Expanding Horizons',
-      description: 'Over 2,00,000+ graduates with international affiliates in Middle East & South-East Asia adopting our handwriting styles.',
+      title: '2,00,000+ Students Successfully Trained',
+      description: 'Helping learners develop neat, fluent, confident, and presentation-focused handwriting skills.',
       category: 'Global Presence',
       icon: <Milestone className="w-5 h-5" />,
     },
@@ -74,7 +73,6 @@ export default function Achievements() {
         students: Math.floor(easeProgress * 200000),
         teachers: Math.floor(easeProgress * 20000),
         schools: Math.floor(easeProgress * 200),
-        transformations: Math.floor(easeProgress * 95000),
       });
 
       if (progress < 1) {
@@ -95,13 +93,13 @@ export default function Achievements() {
           <h2 className="font-serif text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-4">
             Numbers That Define Our Commitment to Excellence
           </h2>
-          <p className="text-slate-400 mt-4 text-sm max-w-lg mx-auto font-light">
-            Each numerical milestone maps to a child regain confidence, an educator discovering vocational freedom, or an institution lifting academic performance.
+          <p className="text-slate-400 mt-4 text-sm max-w-2xl mx-auto font-light leading-relaxed">
+            Since 2008, Alphabet Educational Hub has empowered thousands of students, teachers, schools, and aspiring educators to transform their handwriting skills, teaching abilities, confidence, and career opportunities.
           </p>
         </div>
 
         {/* Counts / Counter Display Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20" id="stats-counter-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20" id="stats-counter-grid">
           {/* Tile 1 */}
           <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-brand-cyan/20 transition-all duration-300">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/5 rounded-full blur-2xl group-hover:bg-brand-cyan/10 transition-colors" />
@@ -113,7 +111,7 @@ export default function Achievements() {
             </span>
             <div className="w-8 h-[2px] bg-brand-cyan mt-4 rounded-full" />
             <p className="text-xs text-slate-400 mt-3 font-light">
-              Sharper motor skills, beautiful letters, and increased reading rates under expert guidance.
+              Helping learners develop neat, fluent, confident, and presentation-focused handwriting skills.
             </p>
           </div>
 
@@ -128,7 +126,7 @@ export default function Achievements() {
             </span>
             <div className="w-8 h-[2px] bg-brand-purple mt-4 rounded-full" />
             <p className="text-xs text-slate-400 mt-3 font-light">
-              Passionate professionals armed with premium teaching mechanics and physical learning scripts.
+              Trained aspiring educators through advanced Professional Handwriting Teacher Training Programs.
             </p>
           </div>
 
@@ -143,22 +141,7 @@ export default function Achievements() {
             </span>
             <div className="w-8 h-[2px] bg-pink-500 mt-4 rounded-full" />
             <p className="text-xs text-slate-400 mt-3 font-light">
-              Integrating handwriting drills directly inside formal daily academic school systems.
-            </p>
-          </div>
-
-          {/* Tile 4 */}
-          <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-emerald-400/20 transition-all duration-300">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-400/5 rounded-full blur-2xl group-hover:bg-emerald-400/10 transition-colors" />
-            <span className="block text-4xl md:text-5xl font-serif font-black text-white leading-none">
-              {counts.transformations === 0 ? 'Thousands' : `${counts.transformations.toLocaleString()}+`}
-            </span>
-            <span className="block text-xs font-bold text-emerald-400 tracking-wider uppercase mt-3">
-              Transformations Achieved
-            </span>
-            <div className="w-8 h-[2px] bg-emerald-400 mt-4 rounded-full" />
-            <p className="text-xs text-slate-400 mt-3 font-light">
-              Overcoming pencil grip fatigue, alignment difficulties, and motor anxieties on physical paper.
+              Collaborating with State Board, CBSE, ICSE, and International Schools to deliver quality handwriting education.
             </p>
           </div>
         </div>

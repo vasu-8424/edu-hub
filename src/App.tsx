@@ -4,14 +4,14 @@ import BackgroundEffect from './components/BackgroundEffect';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import FounderMessage from './components/FounderMessage';
 import WhyChooseUs from './components/WhyChooseUs';
-import Achievements from './components/Achievements';
 import Courses from './components/Courses';
+import WhatWeTeach from './components/WhatWeTeach';
 import HandwritingStyles from './components/HandwritingStyles';
-import ProgramBenefits from './components/ProgramBenefits';
 import BooksSection from './components/BooksSection';
 import Workshops from './components/Workshops';
-import Testimonials from './components/Testimonials';
+import CareerOpportunities from './components/CareerOpportunities';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -96,34 +96,34 @@ export default function App() {
           onOpenBrochure={() => setBrochureOpen(true)} 
         />
         
-        {/* 2. Legacy since 2008 Split About block */}
+        {/* 2. About */}
         <About />
 
-        {/* 3. Competitive visual advantages */}
+        {/* 3. Founder's Message */}
+        <FounderMessage />
+
+        {/* 4. Competitive visual advantages */}
         <WhyChooseUs />
 
-        {/* 4. Scrolling counter achievements metrics & timelines */}
-        <Achievements />
-
-        {/* 5. Detailed structured course tracks with drawers */}
+        {/* 5. Detailed structured course tracks with accordions */}
         <Courses />
 
-        {/* 6. Live calligraphical practice sandbox emulator */}
+        {/* 6. What We Teach */}
+        <WhatWeTeach />
+
+        {/* 7. Handwriting Styles & Languages */}
         <HandwritingStyles />
 
-        {/* 7. Bento grid neurological cognitive advantages */}
-        <ProgramBenefits />
-
-        {/* 8. 3D rotating copyset book catalog showcase */}
+        {/* 7. 3D rotating copyset book catalog showcase */}
         <BooksSection />
 
-        {/* 9. Campus classroom workshops planner estimator */}
+        {/* 8. Campus classroom workshops planner */}
         <Workshops />
 
-        {/* 10. Automotive sliding client feedback carousel */}
-        <Testimonials />
+        {/* 9. Career Opportunities */}
+        <CareerOpportunities />
 
-        {/* 11. Interactive node operational map & contact forms */}
+        {/* 10. Interactive contact forms */}
         <Contact />
       </main>
 
@@ -173,7 +173,7 @@ export default function App() {
                     Reserve Your Seat
                   </h3>
                   <p className="text-xs text-slate-400 font-light mt-1">
-                    Start a 15-hour certified handwriting remediation course.
+                    Join the Professional Handwriting Teacher Training Program and build a rewarding career in handwriting education.
                   </p>
                 </div>
 
@@ -212,10 +212,13 @@ export default function App() {
                       onChange={(e) => setEnrollForm({ ...enrollForm, course: e.target.value })}
                       className="w-full bg-[#0d0a20] border border-white/10 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:border-brand-cyan"
                     >
-                      <option value="diploma">Professional Diploma in Teacher Training</option>
-                      <option value="calligraphy">Artistic & Broad-edge Calligraphy Training</option>
-                      <option value="dysgraphia">Remedial Student & Dysgraphia Support</option>
-                      <option value="teacher">Fast-track Vocational Teacher Training</option>
+                      <option className="bg-[#8b5cf6] text-white" value="diploma">Professional Diploma Course (6 Months)</option>
+                      <option className="bg-[#8b5cf6] text-white" value="foundation">Foundation Level Handwriting Trainer Course (3 Months)</option>
+                      <option className="bg-[#8b5cf6] text-white" value="expert">Expert Level Handwriting Trainer Course (3 Months)</option>
+                      <option className="bg-[#8b5cf6] text-white" value="calligraphy">Calligraphy &amp; Creative Writing Training</option>
+                      <option className="bg-[#8b5cf6] text-white" value="dysgraphia">Dysgraphia Identification &amp; Learning Support</option>
+                      <option className="bg-[#8b5cf6] text-white" value="school-workshop">School Workshop (3 Hours)</option>
+                      <option className="bg-[#8b5cf6] text-white" value="teacher-workshop">Teacher Training Workshop (1 Hour)</option>
                     </select>
                   </div>
                 </div>
