@@ -31,7 +31,7 @@ export default function FounderMessage() {
               <div className="relative glass-panel rounded-3xl overflow-hidden p-[10px] shadow-2xl">
                 <div className="rounded-2xl overflow-hidden relative bg-[#0b041c]" style={{ aspectRatio: '3/4' }}>
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600&h=800"
+                    src="/founder.jpeg"
                     alt="Revanth Koppisetti — Founder, Alphabet Educational Hub"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transition-all duration-700 filter saturate-[0.8] group-hover:scale-105 group-hover:saturate-100"
