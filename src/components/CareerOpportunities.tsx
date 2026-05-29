@@ -1,4 +1,6 @@
-import { GraduationCap, Users, Store, Megaphone, ArrowRight, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { GraduationCap, Users, Store, Megaphone, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface CareerPath {
   id: string;
@@ -8,7 +10,7 @@ interface CareerPath {
   highlights: string[];
   icon: React.ReactNode;
   gradient: string;
-  colorClass: string;
+  glowColor: string;
 }
 
 export default function CareerOpportunities() {
@@ -17,9 +19,9 @@ export default function CareerOpportunities() {
       id: 'trainer',
       title: 'Handwriting Trainer',
       badge: 'MOST IN DEMAND',
-      icon: <GraduationCap className="w-6 h-6 text-brand-cyan" />,
-      gradient: 'from-brand-cyan to-blue-700',
-      colorClass: 'border-brand-cyan/30',
+      icon: <GraduationCap className="w-6 h-6 text-[#22d3ee]" />,
+      gradient: 'from-[#22d3ee] to-blue-600',
+      glowColor: 'bg-[#22d3ee]/20',
       description: 'Become a certified Professional Handwriting Trainer and educator. Gain expert training, teaching methodologies, and practical experience to build a successful career in handwriting education.',
       highlights: []
     },
@@ -27,9 +29,9 @@ export default function CareerOpportunities() {
       id: 'internship',
       title: 'Internship Programs',
       badge: 'HANDS-ON LEARNING',
-      icon: <Users className="w-6 h-6 text-brand-purple" />,
-      gradient: 'from-brand-purple to-indigo-700',
-      colorClass: 'border-brand-purple/30',
+      icon: <Users className="w-6 h-6 text-[#c084fc]" />,
+      gradient: 'from-[#c084fc] to-indigo-600',
+      glowColor: 'bg-[#c084fc]/20',
       description: 'Hands-on learning opportunities for aspiring trainers and educators. Gain real classroom exposure, guided mentorship, and practical training experience in handwriting development programs.',
       highlights: []
     },
@@ -37,9 +39,9 @@ export default function CareerOpportunities() {
       id: 'franchise',
       title: 'Franchise Opportunities',
       badge: 'BUSINESS OPPORTUNITY',
-      icon: <Store className="w-6 h-6 text-emerald-400" />,
-      gradient: 'from-emerald-500 to-teal-700',
-      colorClass: 'border-emerald-400/30',
+      icon: <Store className="w-6 h-6 text-[#34d399]" />,
+      gradient: 'from-[#34d399] to-teal-600',
+      glowColor: 'bg-[#34d399]/20',
       description: 'Partner with Alphabet Educational Hub and establish your own center. Expand handwriting education services in your region with our proven training systems, brand support, and operational guidance.',
       highlights: []
     },
@@ -47,67 +49,96 @@ export default function CareerOpportunities() {
       id: 'marketing',
       title: 'Marketing Manager',
       badge: 'OUTREACH ROLE',
-      icon: <Megaphone className="w-6 h-6 text-pink-400" />,
-      gradient: 'from-pink-500 to-rose-700',
-      colorClass: 'border-pink-400/30',
+      icon: <Megaphone className="w-6 h-6 text-[#f472b6]" />,
+      gradient: 'from-[#f472b6] to-rose-600',
+      glowColor: 'bg-[#f472b6]/20',
       description: 'Career opportunities for individuals passionate about educational outreach, branding, and institutional growth. Contribute to expanding our mission and reaching more schools and learners.',
       highlights: []
     }
   ];
 
-  return (
-    <section id="careers" className="relative py-24 px-4 md:px-8 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-brand-cyan/3 blur-3xl -z-10" />
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
 
-      <div className="max-w-7xl mx-auto">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <section id="careers" className="relative py-32 px-4 md:px-8 overflow-hidden bg-[#03040b]">
+      {/* Background glow */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-brand-cyan/10 blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-brand-purple/10 blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-xs font-bold tracking-[0.25em] text-emerald-400 uppercase bg-emerald-400/10 px-4 py-1.5 rounded-full">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <span className="text-[11px] font-bold tracking-[0.25em] text-emerald-400 uppercase bg-emerald-400/10 border border-emerald-400/20 px-5 py-2 rounded-full shadow-[0_0_15px_rgba(52,211,153,0.15)]">
             Career Pathways
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-4">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mt-6 leading-tight">
             Career Opportunities
           </h2>
-          <p className="text-sm md:text-base text-slate-400 font-light max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="text-base md:text-lg text-slate-400 font-light max-w-3xl mx-auto mt-6 leading-relaxed">
             Build a rewarding future with Alphabet Educational Hub. Join us in our mission to transform handwriting education and empower learners across India. We offer multiple career pathways for passionate individuals.
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-emerald-400 to-brand-cyan mx-auto mt-6 rounded-full" />
-        </div>
+        </motion.div>
 
         {/* Career Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12" id="careers-grid">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16" 
+          id="careers-grid"
+        >
           {careers.map((career) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={career.id}
-              className={`glass-panel p-8 rounded-3xl relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl border border-transparent hover:${career.colorClass}`}
-              id={`career-card-${career.id}`}
+              className="group relative p-[1px] rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden"
             >
-              {/* Backglow */}
-              <div className={`absolute -bottom-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-5 group-hover:opacity-15 transition-all bg-gradient-to-tr ${career.gradient}`} />
+              {/* Animated Glow Border */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className={`absolute -inset-1 blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 ${career.glowColor}`} />
 
-              <div className="relative z-10">
+              <div className="relative h-full w-full bg-[#090814]/90 backdrop-blur-2xl rounded-[2.4rem] p-8 md:p-10 flex flex-col z-10 transition-transform duration-500 group-hover:scale-[0.99]">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className={`p-3.5 rounded-xl bg-gradient-to-br ${career.gradient} shadow-lg`}>
+                <div className="flex items-center justify-between mb-8">
+                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${career.gradient} shadow-[0_0_30px_rgba(255,255,255,0.1)]`}>
                     {career.icon}
                   </div>
-                  <span className="text-[10px] font-mono font-bold tracking-widest text-[#8b5cf6] bg-white/5 border border-white/5 px-3 py-1 rounded-full uppercase">
+                  <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/80 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full uppercase shadow-inner">
                     {career.badge}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-2xl font-bold text-white tracking-tight mb-3 group-hover:text-brand-cyan transition-colors">
+                <h3 className="font-serif text-3xl font-extrabold text-white tracking-tight mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-400 transition-all">
                   {career.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs md:text-sm text-slate-300 font-light leading-relaxed mb-6">
+                <p className="text-sm text-slate-400 font-light leading-relaxed mb-10 flex-grow">
                   {career.description}
                 </p>
-
-                {/* Empty block to remove highlights rendering */}
 
                 {/* CTA */}
                 <button
@@ -115,44 +146,51 @@ export default function CareerOpportunities() {
                     const el = document.getElementById('contact');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="flex items-center gap-2 text-xs font-semibold text-brand-cyan group-hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-sm font-bold text-white group-hover:text-brand-cyan transition-colors mt-auto w-max"
                   id={`career-inquire-${career.id}`}
                 >
-                  <span>Learn More & Apply</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <span className="border-b border-transparent group-hover:border-brand-cyan/50 pb-0.5 transition-colors">Learn More & Apply</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA Banner */}
-        <div className="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden border border-emerald-400/20" id="careers-cta-banner">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-brand-cyan/5 pointer-events-none" />
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="relative p-[1px] rounded-[2.5rem] bg-gradient-to-r from-emerald-500/30 to-brand-cyan/30 overflow-hidden" 
+          id="careers-cta-banner"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-brand-cyan/10 blur-xl pointer-events-none" />
+          <div className="relative w-full h-full bg-[#090814]/80 backdrop-blur-3xl rounded-[2.4rem] p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 text-center lg:text-left z-10">
             <div className="max-w-2xl">
-              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block mb-2">
+              <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase tracking-[0.25em] block mb-4">
                 Ready to Begin?
               </span>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-white tracking-tight mb-2">
+              <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight">
                 Join Our Mission to Transform Handwriting Education
               </h3>
-              <p className="text-xs md:text-sm text-slate-400 font-light leading-relaxed">
+              <p className="text-sm md:text-base text-slate-400 font-light leading-relaxed">
                 Whether you want to improve handwriting, become a certified handwriting teacher, or build a successful teaching career, Alphabet Educational Hub is here to guide your journey.
               </p>
             </div>
             <div className="shrink-0">
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-emerald-500 to-brand-cyan hover:brightness-110 transition-all shadow-lg whitespace-nowrap"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12),0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 whitespace-nowrap group"
                 id="careers-contact-cta"
               >
                 <span>Contact Our Team</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

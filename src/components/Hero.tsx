@@ -1,4 +1,5 @@
 import { ArrowRight, FileText, PhoneCall, Sparkles, PencilLine } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface HeroProps {
   onOpenEnroll: () => void;
@@ -6,20 +7,44 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenEnroll, onOpenBrochure }: HeroProps) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: 'spring', stiffness: 80, damping: 20 },
+    },
+  };
+
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex flex-col justify-center items-center px-4 md:px-8 pt-32 pb-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center px-4 md:px-8 pt-32 pb-20 overflow-hidden bg-[#03040b]"
     >
+      {/* Dynamic Background Glowing Orbs */}
+      <div className="absolute top-[10%] left-[10%] w-[350px] h-[350px] bg-brand-purple/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-slow-pulse" />
+      <div className="absolute bottom-[20%] right-[10%] w-[450px] h-[450px] bg-brand-cyan/15 rounded-full blur-[150px] mix-blend-screen pointer-events-none animate-slow-pulse" style={{ animationDelay: '2s' }} />
+
       {/* Handwriting Flow Motion Graphic */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 opacity-40">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 opacity-30">
         <svg 
           viewBox="0 0 1000 600" 
           fill="none" 
           className="w-full max-w-5xl h-auto"
           aria-hidden="true"
         >
-          <g opacity="0.12">
+          <g opacity="0.08">
             <line x1="10%" y1="15%" x2="90%" y2="15%" stroke="#8b5cf6" strokeWidth="1" strokeDasharray="4,4" />
             <line x1="10%" y1="35%" x2="90%" y2="35%" stroke="#06b6d4" strokeWidth="1.5" />
             <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="#8b5cf6" strokeWidth="1" strokeDasharray="3,3" />
@@ -59,159 +84,139 @@ export default function Hero({ onOpenEnroll, onOpenBrochure }: HeroProps) {
           0% { stroke-dashoffset: 1400; opacity: 0; }
           10% { opacity: 0.8; }
           85% { stroke-dashoffset: 0; opacity: 0.8; }
-          100% { stroke-dashoffset: 0; opacity: 0.2; }
+          100% { stroke-dashoffset: 0; opacity: 0.1; }
         }
       `}</style>
 
       {/* Floating accent particles */}
-      <div className="absolute top-[28%] left-[20%] animate-float pointer-events-none filter drop-shadow-[0_0_10px_#8b5cf6] text-brand-purple/40">
-        <Sparkles className="w-6 h-6" />
-      </div>
-      <div className="absolute bottom-[35%] right-[15%] animate-float-slow pointer-events-none filter drop-shadow-[0_0_10px_#06b6d4] text-brand-cyan/40">
-        <PencilLine className="w-8 h-8" />
-      </div>
+      <motion.div 
+        animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[25%] left-[15%] pointer-events-none filter drop-shadow-[0_0_15px_rgba(139,92,246,0.6)] text-brand-purple/60"
+      >
+        <Sparkles className="w-8 h-8" />
+      </motion.div>
+      <motion.div 
+        animate={{ y: [10, -10, 10], rotate: [0, -5, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[30%] right-[15%] pointer-events-none filter drop-shadow-[0_0_15px_rgba(6,182,212,0.6)] text-brand-cyan/60"
+      >
+        <PencilLine className="w-10 h-10" />
+      </motion.div>
 
-      <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center"
+      >
         {/* Admissions Badge */}
-        <div 
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-cyan text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md animate-fade-in"
-          id="hero-badge"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-brand-cyan animate-pulse" />
-          <span>Admissions Open for 2026 Batch</span>
-        </div>
+        <motion.div variants={itemVariants} className="mb-8">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_0_20px_rgba(255,255,255,0.03)] group cursor-default hover:bg-white/10 transition-colors duration-300">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-cyan"></span>
+            </span>
+            <span className="text-brand-cyan text-[11px] font-bold tracking-[0.15em] uppercase">
+              Admissions Open for 2026 Batch
+            </span>
+          </div>
+        </motion.div>
 
         {/* Main Headline */}
-        <h1 
-          className="font-serif text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 max-w-4xl"
-          id="hero-headline"
+        <motion.h1 
+          variants={itemVariants}
+          className="font-serif text-5xl sm:text-6xl md:text-[5rem] font-extrabold text-white tracking-tight leading-[1.05] mb-6 max-w-4xl"
         >
           Transforming{' '}
-          <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-purple to-pink-500 font-bold">
+          <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-purple to-pink-500 pb-2">
             Handwriting
-            <span className="absolute left-0 bottom-1 w-full h-[3px] bg-gradient-to-r from-brand-cyan via-brand-purple to-pink-500 rounded-full opacity-60" />
+            <span className="absolute left-0 bottom-1 w-full h-[4px] bg-gradient-to-r from-brand-cyan via-brand-purple to-pink-500 rounded-full opacity-50 blur-[2px]" />
+            <span className="absolute left-0 bottom-1 w-full h-[2px] bg-gradient-to-r from-brand-cyan via-brand-purple to-pink-500 rounded-full" />
           </span>
           .<br />
           Empowering{' '}
-          <span className="font-light italic text-slate-100 font-serif">Futures</span>.
-        </h1>
+          <span className="font-light italic text-slate-200 font-serif">Futures</span>.
+        </motion.h1>
 
         {/* Sub-headline */}
-        <p className="text-base sm:text-lg md:text-xl text-brand-cyan font-semibold max-w-3xl leading-relaxed mb-3" id="hero-subheadline-accent">
+        <motion.p variants={itemVariants} className="text-lg sm:text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-400 font-bold max-w-3xl leading-relaxed mb-4">
           Become a Certified Professional Handwriting Teacher
-        </p>
+        </motion.p>
 
-        <p className="text-sm sm:text-base md:text-lg text-slate-300 font-sans font-light max-w-3xl leading-relaxed mb-6" id="hero-subheadline">
+        <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-slate-300 font-sans font-medium max-w-3xl leading-relaxed mb-8">
           India's trusted destination for Handwriting Teacher Training with 100% placement assistance, Calligraphy Excellence, and Student Development Programs.
-        </p>
+        </motion.p>
 
-        <p className="text-xs sm:text-sm text-slate-400 font-light max-w-2xl leading-relaxed mb-4" id="hero-description">
+        <motion.p variants={itemVariants} className="text-xs sm:text-sm text-slate-400 font-light max-w-2xl leading-relaxed mb-10">
           Since 2008, Alphabet Educational Hub has empowered thousands of students, teachers, schools, and aspiring educators through expert-designed programs that enhance handwriting, concentration, confidence, creativity, and presentation skills.
-        </p>
+        </motion.p>
 
-        {/* Tagline quote */}
-        <div className="mb-8 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-          <p className="text-sm font-serif italic text-brand-cyan font-semibold tracking-wide" id="hero-tagline">
-            "Beautiful Handwriting Builds Bright Minds"
-          </p>
-        </div>
+        {/* About Us Content Block */}
+        <motion.div variants={itemVariants} className="mb-10 p-[1px] rounded-3xl bg-gradient-to-b from-white/10 to-transparent max-w-4xl relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/10 to-brand-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="px-8 py-7 rounded-3xl bg-[#090814]/80 backdrop-blur-md text-center relative z-10">
+            <span className="text-xs font-bold tracking-[0.25em] text-brand-purple uppercase mb-4 block">
+              About Us
+            </span>
+            <p className="text-sm md:text-base text-slate-300 font-light leading-relaxed">
+              Alphabet Educational Hub provides a comprehensive range of educational services, including in-person and online classes, structured courses, workshops for students and teachers, and professional teacher training programs. Our core offerings include teacher training, handwriting improvement, cursive, Lucida, calligraphy, and creative writing development.
+            </p>
+          </div>
+        </motion.div>
 
         {/* CTA Paragraph */}
-        <p className="text-sm md:text-base text-brand-purple font-semibold max-w-2xl leading-relaxed mb-8" id="hero-cta-text">
+        <motion.p variants={itemVariants} className="text-sm md:text-base text-brand-purple/90 font-semibold max-w-2xl leading-relaxed mb-10">
           Join the Professional Handwriting Teacher Training Program and build a rewarding career in handwriting education.
-        </p>
+        </motion.p>
 
         {/* CTA Buttons */}
-        <div 
-          className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full justify-center max-w-3xl px-4"
-          id="hero-ctas"
-        >
-          {/* Enroll Now */}
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-5 mb-20 w-full justify-center max-w-3xl px-4">
           <button
             onClick={onOpenEnroll}
-            className="w-full sm:w-auto relative group overflow-hidden flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-brand-purple to-brand-cyan shadow-xl shadow-brand-purple/20 hover:scale-103 hover:shadow-brand-cyan/30 transition-all duration-300"
-            id="hero-enroll-cta"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 rounded-2xl text-sm font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12),0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 group"
           >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-cyan to-brand-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             <span>Enroll Today</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
           </button>
 
-          {/* Download Brochure */}
           <button
             onClick={onOpenBrochure}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold text-white bg-emerald-600/80 border border-emerald-500/40 hover:bg-emerald-600 hover:border-emerald-400/60 transition-all duration-300"
-            id="hero-brochure-cta"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-semibold text-white bg-transparent backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300 group"
           >
-            <FileText className="w-4 h-4" />
+            <FileText className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
             <span>Download Brochure</span>
           </button>
 
-          {/* Contact Us */}
           <a
             href="https://wa.me/919063526196?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20Alphabet%20Educational%20Hub."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold text-brand-cyan bg-brand-cyan/5 border border-brand-cyan/20 hover:bg-brand-cyan/20 hover:border-brand-cyan/40 transition-all duration-300"
-            id="hero-contact-cta"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-semibold text-white bg-transparent backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300 group"
           >
-            <PhoneCall className="w-4 h-4" />
+            <PhoneCall className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
             <span>Contact Us</span>
           </a>
-        </div>
-
-        {/* Trust Indicators */}
-        <div 
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full max-w-4xl"
-          id="hero-trust-dashboard"
-        >
-          <div className="glass-panel p-6 rounded-2xl flex flex-col justify-center items-center text-center transform hover:translate-y-[-4px] transition-all duration-400 group">
-            <span className="font-serif text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 group-hover:to-brand-cyan transition-colors">
-              2,00,000+
-            </span>
-            <span className="font-serif text-xs font-bold text-brand-cyan tracking-wider uppercase mt-1">
-              Students Trained
-            </span>
-            <p className="text-xs text-slate-400 mt-2">
-              Transforming penmanship & confidence nationwide.
-            </p>
-          </div>
-
-          <div className="glass-panel p-6 rounded-2xl flex flex-col justify-center items-center text-center transform hover:translate-y-[-4px] transition-all duration-400 group">
-            <span className="font-serif text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 group-hover:to-brand-purple transition-colors">
-              20,000+
-            </span>
-            <span className="font-serif text-xs font-bold text-brand-purple tracking-wider uppercase mt-1">
-              Teachers Empowered
-            </span>
-            <p className="text-xs text-slate-400 mt-2">
-              Certified educators leading classrooms into the future.
-            </p>
-          </div>
-
-          <div className="glass-panel p-6 rounded-2xl flex flex-col justify-center items-center text-center transform hover:translate-y-[-4px] transition-all duration-400 group">
-            <span className="font-serif text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 group-hover:to-pink-500 transition-colors">
-              200+
-            </span>
-            <span className="font-serif text-xs font-bold text-pink-500 tracking-wider uppercase mt-1">
-              Schools Associated
-            </span>
-            <p className="text-xs text-slate-400 mt-2">
-              Integrated curriculum & professional skill partnerships.
-            </p>
-          </div>
-        </div>
+        </motion.div>
 
         {/* Scroll Indicator */}
-        <a href="#about" className="mt-14 flex flex-col items-center gap-2 group pointer-events-auto" id="hero-scroll-indicator">
+        <motion.a 
+          variants={itemVariants}
+          href="#about" 
+          className="flex flex-col items-center gap-3 group pointer-events-auto"
+        >
           <span className="text-[10px] tracking-[0.3em] font-semibold text-slate-500 uppercase group-hover:text-white transition-colors duration-300">
             Scroll to Explore
           </span>
-          <div className="w-5 h-8 rounded-full border border-slate-600 group-hover:border-brand-cyan transition-colors duration-300 flex justify-center p-1.5">
-            <span className="w-1 h-2 bg-brand-cyan rounded-full animate-bounce" />
+          <div className="w-6 h-10 rounded-full border-2 border-white/10 group-hover:border-brand-cyan/50 transition-colors duration-300 flex justify-center p-1.5 bg-white/5 backdrop-blur-sm">
+            <motion.span 
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-1.5 h-2.5 bg-brand-cyan rounded-full" 
+            />
           </div>
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </section>
   );
 }

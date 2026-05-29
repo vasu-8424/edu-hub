@@ -24,7 +24,7 @@ export default function HandwritingStyles() {
       glowColor: 'bg-pink-400'
     },
     {
-      title: 'Print (Normal) Style',
+      title: 'Universal Alphabet',
       icon: <PenTool className="w-8 h-8 text-emerald-400" />,
       description: 'A standard, disconnected writing style focused on maximum legibility and simplicity. Print is highly effective for clear, professional communication and foundational learning.',
       borderColor: 'border-emerald-400/20 hover:border-emerald-400/50',
@@ -92,7 +92,7 @@ export default function HandwritingStyles() {
           <div className="relative z-10 flex flex-col sm:flex-row flex-wrap gap-4 shrink-0 justify-center">
             <div className="px-6 py-4 rounded-2xl bg-white/5 border border-brand-cyan/30 flex flex-col items-center justify-center shadow-lg">
               <span className="font-serif text-xl font-bold text-white tracking-wide mb-1">English</span>
-              <span className="text-[10px] text-brand-cyan uppercase tracking-wider font-mono">Cursive, Print & Lucida</span>
+              <span className="text-[10px] text-brand-cyan uppercase tracking-wider font-mono">Cursive & Lucida</span>
             </div>
             <div className="px-6 py-4 rounded-2xl bg-white/5 border border-brand-purple/30 flex flex-col items-center justify-center shadow-lg">
               <span className="font-serif text-xl font-bold text-white tracking-wide mb-1">Telugu</span>

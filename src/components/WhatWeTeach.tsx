@@ -40,9 +40,7 @@ export default function WhatWeTeach() {
           <h2 className="font-serif text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-4">
             Our Advanced Handwriting Learning Approach
           </h2>
-          <p className="text-sm md:text-base text-slate-400 font-light max-w-3xl mx-auto mt-4 leading-relaxed">
-            At Alphabet Educational Hub, our training methodology is built on advanced, designed handwriting principles that focus on clarity, speed, discipline, and long-term skill development. We go beyond basic writing practice to build strong foundational and advanced handwriting abilities in students and aspiring teachers.
-          </p>
+
           <div className="w-12 h-1 bg-gradient-to-r from-brand-cyan to-brand-purple mx-auto mt-6 rounded-full" />
         </div>
 

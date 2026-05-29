@@ -3,22 +3,11 @@ import { Shield, Star, Users, HeartPulse, GraduationCap, ArrowRight, CheckCircle
 export default function WhyChooseUs() {
   const reasons = [
     {
-      id: 'legacy',
-      icon: <Star className="w-6 h-6 text-brand-cyan" />,
-      badge: 'Trusted Since 2008',
-      title: 'Since 2008',
-      description: 'Trusted by thousands of students, teachers, and educational institutions across Andhra Pradesh and beyond.',
-      colorClass: 'hover:border-brand-cyan/40',
-      glowClass: 'bg-brand-cyan',
-      iconBg: 'bg-brand-cyan/10 border-brand-cyan/20',
-      span: 'md:col-span-6'
-    },
-    {
-      id: 'placement',
-      icon: <GraduationCap className="w-6 h-6 text-brand-purple" />,
-      badge: '100% Placement',
-      title: '100% Placement Guarantee Handwriting Teacher Training Course',
-      description: 'We offer a professional handwriting teacher training program with 100% placement assistance and career guidance for eligible candidates, helping aspiring trainers build successful careers in handwriting education and teaching.',
+      id: 'faculty',
+      icon: <Users className="w-6 h-6 text-brand-purple" />,
+      badge: 'Expert Faculty',
+      title: 'Highly Experienced & Certified Teacher Trainers',
+      description: 'Our expert faculty consists of professionally trained and experienced mentors who provide in-depth guidance, practical teaching techniques, and continuous support to help aspiring handwriting teachers build successful and rewarding careers in handwriting education.',
       colorClass: 'hover:border-brand-purple/40',
       glowClass: 'bg-brand-purple',
       iconBg: 'bg-brand-purple/10 border-brand-purple/20',
@@ -33,7 +22,7 @@ export default function WhyChooseUs() {
       colorClass: 'hover:border-emerald-400/40',
       glowClass: 'bg-emerald-400',
       iconBg: 'bg-emerald-400/10 border-emerald-400/20',
-      span: 'md:col-span-4'
+      span: 'md:col-span-6'
     },
     {
       id: 'attention',
@@ -44,7 +33,7 @@ export default function WhyChooseUs() {
       colorClass: 'hover:border-pink-400/40',
       glowClass: 'bg-pink-400',
       iconBg: 'bg-pink-400/10 border-pink-400/20',
-      span: 'md:col-span-4'
+      span: 'md:col-span-6'
     },
     {
       id: 'dysgraphia',
@@ -55,7 +44,7 @@ export default function WhyChooseUs() {
       colorClass: 'hover:border-amber-400/40',
       glowClass: 'bg-amber-400',
       iconBg: 'bg-amber-400/10 border-amber-400/20',
-      span: 'md:col-span-4'
+      span: 'md:col-span-6'
     }
   ];
 
@@ -73,9 +62,6 @@ export default function WhyChooseUs() {
               Why Parents, Students &amp; Schools Trust Us
             </h2>
           </div>
-          <p className="text-sm text-slate-400 max-w-sm font-light leading-relaxed">
-            Since 2008, Trusted by thousands of students, teachers, and educational institutions across Andhra Pradesh and beyond.
-          </p>
         </div>
 
         {/* Bento Cards Grid */}
@@ -94,9 +80,6 @@ export default function WhyChooseUs() {
                 <div className={`p-3 rounded-xl border shadow-inner group-hover:scale-110 transition-transform duration-300 ${reason.iconBg}`}>
                   {reason.icon}
                 </div>
-                <span className="text-[10px] font-mono font-bold tracking-widest text-slate-400 bg-white/5 border border-white/5 px-3 py-1 rounded-full uppercase">
-                  {reason.badge}
-                </span>
               </div>
 
               <h3 className="font-serif text-lg md:text-xl font-bold text-white tracking-tight mb-3 leading-snug">
@@ -107,11 +90,7 @@ export default function WhyChooseUs() {
                 {reason.description}
               </p>
 
-              {/* Elite pedagogy marker */}
-              <div className="h-[1px] bg-white/5 mb-3" />
-              <span className="text-[10px] font-mono font-semibold text-slate-600 uppercase tracking-widest">
-                Elite Pedagogy →
-              </span>
+
             </div>
           ))}
         </div>
@@ -151,7 +130,7 @@ export default function WhyChooseUs() {
                 className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-purple to-brand-cyan hover:brightness-110 transition-all shadow-lg whitespace-nowrap"
                 id="why-enroll-cta"
               >
-                <span>Start Your Transformation Today</span>
+                <span>Make the test to options</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

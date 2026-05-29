@@ -47,11 +47,7 @@ export default function FounderMessage() {
                     <span className="block text-xs text-brand-cyan mt-0.5 font-semibold">
                       Founder & Director
                     </span>
-                    <div className="flex items-center gap-1 mt-1">
-                      <MapPin className="w-3 h-3 text-slate-400" />
-                      <span className="text-[10px] text-slate-400">Kakinada, Andhra Pradesh</span>
                     </div>
-                  </div>
                 </div>
               </div>
 
@@ -83,7 +79,7 @@ export default function FounderMessage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-pink-400 shrink-0 mt-0.5" />
                   <span className="text-xs text-slate-300 font-light leading-relaxed">
-                    Kakinada's Most Trusted Handwriting Institute since 2008
+                    Kakinada's Most Trusted Handwriting Academy since 2008
                   </span>
                 </div>
               </div>
@@ -100,36 +96,22 @@ export default function FounderMessage() {
               </div>
 
               <div className="relative z-10">
-                <span className="text-[10px] font-mono font-bold text-brand-purple uppercase tracking-widest block mb-2">
+                <span className="text-[10px] font-mono font-bold text-brand-purple uppercase tracking-widest block mb-6">
                   Message from Revanth Koppisetti
                 </span>
-                <h3 className="font-serif text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-6">
-                  "Welcome to Alphabet Educational Hub!"
-                </h3>
 
-                <div className="space-y-4 text-sm md:text-base text-slate-300 font-light leading-relaxed">
+                <div className="space-y-5 text-sm md:text-base text-slate-300 font-light leading-relaxed">
                   <p>
-                    It gives me immense pleasure and pride to welcome you to <span className="text-white font-semibold">Alphabet Educational Hub</span> — a place where learning is nurtured, creativity is encouraged, and every student is empowered to achieve their fullest potential.
+                    Welcome to <span className="text-white font-semibold">Alphabet Educational Hub</span> — a trusted academy dedicated to handwriting excellence, creativity, and teacher training across India.
                   </p>
-
                   <p>
-                    At Alphabet Educational Hub, we believe that handwriting is much more than neat writing on paper. It is a lifelong skill that builds <span className="text-brand-cyan font-medium">confidence, improves concentration, strengthens discipline, and enhances creativity and self-expression</span>.
+                    Since 2008, we have been empowering students, teachers, and aspiring educators through advanced handwriting training, innovative teaching methods, and personalized guidance. We believe handwriting is more than writing — it builds <span className="text-brand-cyan font-medium">confidence, concentration, discipline, and self-expression</span>.
                   </p>
-
                   <p>
-                    Since 2008, we have been passionately committed to transforming the handwriting and learning abilities of students, teachers, and aspiring educators through advanced, designed training methods, personalized guidance, and a strong dedication to excellence.
+                    Over the years, we have proudly trained thousands of students and developed professional handwriting teachers with strong career opportunities and <span className="text-brand-cyan font-semibold">100% placement assistance</span>.
                   </p>
-
                   <p>
-                    Over the years, we have proudly established ourselves as one of the most trusted and respected handwriting training institutes in <span className="text-white font-semibold">Kakinada, Andhra Pradesh</span>. The remarkable achievements and success stories of our students and teachers reflect our commitment to quality education and meaningful transformation.
-                  </p>
-
-                  <p>
-                    What makes Alphabet Educational Hub unique is our expertise in developing and training <span className="text-brand-purple font-semibold">professional handwriting teachers</span>, offering <span className="text-brand-cyan font-semibold">100% placement assistance</span>. We specialize in mentoring aspiring educators with advanced handwriting techniques, teaching methodologies, classroom strategies, and professional training programs that help them build successful teaching careers and become confident handwriting professionals.
-                  </p>
-
-                  <p>
-                    As we continue this inspiring journey, I warmly invite you to explore our programs, achievements, and transformation stories that make Alphabet Educational Hub a trusted destination for handwriting excellence and teacher training.
+                    At Alphabet Educational Hub, our mission is not only to improve handwriting but also to create confident learners, skilled educators, and inspiring professionals for the future.
                   </p>
                 </div>
 

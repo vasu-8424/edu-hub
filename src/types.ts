@@ -36,6 +36,7 @@ export interface Book {
   textAccent: string;
   pages: number;
   targetAge: string;
+  image?: string;
 }
 
 export interface Testimonial {
