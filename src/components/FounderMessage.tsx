@@ -105,7 +105,7 @@ export default function FounderMessage() {
                     Welcome to <span className="text-white font-semibold">Alphabet Educational Hub</span> — a trusted academy dedicated to handwriting excellence, creativity, and teacher training across India.
                   </p>
                   <p>
-                    Since 2008, we have been empowering students, teachers, and aspiring educators through advanced handwriting training, innovative teaching methods, and personalized guidance. We believe handwriting is more than writing — it builds <span className="text-brand-cyan font-medium">confidence, concentration, discipline, and self-expression</span>.
+                    We have spent years perfecting our craft to deliver advanced handwriting training and innovative teaching methodologies. We believe handwriting is more than writing — it builds <span className="text-brand-cyan font-medium">confidence, concentration, discipline, and self-expression</span>.
                   </p>
                   <p>
                     Over the years, we have proudly trained thousands of students and developed professional handwriting teachers with strong career opportunities and <span className="text-brand-cyan font-semibold">100% placement assistance</span>.

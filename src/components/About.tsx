@@ -170,7 +170,7 @@ export default function About() {
                   India's Trusted Handwriting Education Hub
                 </h3>
                 <p className="text-base text-slate-300 leading-relaxed font-light mb-10">
-                  Since 2008, Alphabet Educational Hub has been empowering thousands of students, teachers, schools, and aspiring educators through expert-designed programs that enhance handwriting, concentration, confidence, creativity, and presentation skills.
+                  For over a decade, we have been dedicated to transforming lives through the art of handwriting. Our programs are uniquely designed to foster cognitive development, fine motor skills, and an enduring appreciation for beautiful penmanship.
                 </p>
                 <div className="grid grid-cols-2 gap-6">
                   {[

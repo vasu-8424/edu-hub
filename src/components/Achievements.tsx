@@ -94,7 +94,7 @@ export default function Achievements() {
             Numbers That Define Our Commitment to Excellence
           </h2>
           <p className="text-slate-400 mt-4 text-sm max-w-2xl mx-auto font-light leading-relaxed">
-            Since 2008, Alphabet Educational Hub has empowered thousands of students, teachers, schools, and aspiring educators to transform their handwriting skills, teaching abilities, confidence, and career opportunities.
+            Over the years, our academy has successfully trained a massive community of learners and professionals, helping them unlock new levels of excellence in written communication and pedagogy.
           </p>
         </div>
 

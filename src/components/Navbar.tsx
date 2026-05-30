@@ -124,7 +124,7 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
                       />
                     )}
 
-                    {/* Dropdowns (Same content as before, styled slightly better) */}
+                    {/* Dropdowns */}
                     {item.label === 'Courses' && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
                         <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
@@ -135,7 +135,29 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
                         <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Dysgraphia Learning Support</a>
                       </div>
                     )}
-                    {/* ... other dropdowns omitted for brevity but similar structure ... */}
+                    {item.label === 'Books' && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
+                        <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
+                        <a href="#materials" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Cursive Handwriting</a>
+                        <a href="#materials" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Lucida Handwriting</a>
+                        <a href="#materials" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Telugu Handwriting</a>
+                      </div>
+                    )}
+                    {item.label === 'Workshops' && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
+                        <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
+                        <a href="#workshops" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Students Workshop</a>
+                        <a href="#workshops" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Teachers Workshop</a>
+                      </div>
+                    )}
+                    {item.label === 'Career Opportunities' && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
+                        <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
+                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Handwriting Teacher</a>
+                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Franchise Program</a>
+                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">School Collaborations</a>
+                      </div>
+                    )}
                   </div>
                 );
               })}
