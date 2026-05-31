@@ -172,7 +172,7 @@ export default function About() {
                 <p className="text-base text-slate-300 leading-relaxed font-light mb-10">
                   For over a decade, we have been dedicated to transforming lives through the art of handwriting. Our programs are uniquely designed to foster cognitive development, fine motor skills, and an enduring appreciation for beautiful penmanship.
                 </p>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {[
                     { value: '2,00,000+', label: 'Students Trained', color: 'text-brand-cyan' },
                     { value: '20,000+', label: 'Teachers Empowered', color: 'text-brand-purple' },
@@ -182,10 +182,10 @@ export default function About() {
                     <motion.div 
                       key={stat.label}
                       whileHover={{ y: -5 }}
-                      className="p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner hover:bg-white/10 hover:border-white/10 transition-colors"
+                      className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner hover:bg-white/10 hover:border-white/10 transition-colors"
                     >
-                      <span className={`block text-3xl font-serif font-black tracking-tight ${stat.color} mb-1`}>{stat.value}</span>
-                      <span className="block text-[11px] text-slate-400 uppercase tracking-widest font-semibold">{stat.label}</span>
+                      <span className={`block text-2xl sm:text-3xl font-serif font-black tracking-tight ${stat.color} mb-1`}>{stat.value}</span>
+                      <span className="block text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-widest font-semibold">{stat.label}</span>
                     </motion.div>
                   ))}
                 </div>
