@@ -139,7 +139,7 @@ export default function ProgramBenefits() {
               <div className="h-[1px] bg-white/5 my-4" />
               <div className="flex items-center justify-between text-[10px] text-slate-500 font-mono tracking-wider">
                 <span>PROVEN RESULT</span>
-                <span>SINCE 2008 COGNITION</span>
+                <span>ENHANCED COGNITION</span>
               </div>
             </div>
           ))}

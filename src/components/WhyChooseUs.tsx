@@ -1,6 +1,11 @@
 import { Shield, Star, Users, HeartPulse, GraduationCap, ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export default function WhyChooseUs() {
+interface WhyChooseUsProps {
+  onOpenEnroll: () => void;
+  onOpenBrochure: () => void;
+}
+
+export default function WhyChooseUs({ onOpenEnroll, onOpenBrochure }: WhyChooseUsProps) {
   const reasons = [
     {
       id: 'faculty',
@@ -113,25 +118,42 @@ export default function WhyChooseUs() {
                 Whether you want to improve handwriting, become a certified handwriting teacher, or build a successful teaching career, Alphabet Educational Hub is here to guide your journey.
               </p>
 
-              {/* Quick highlight bullets */}
-              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
-                {['Enroll Now', 'Download Brochure', 'Contact Our Team'].map((cta) => (
-                  <div key={cta} className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-cyan" />
-                    <span className="text-xs text-slate-300 font-medium">{cta}</span>
-                  </div>
-                ))}
+              {/* Quick highlight buttons */}
+              <div className="flex flex-wrap gap-4 mt-6">
+                <button 
+                  onClick={onOpenEnroll}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 group"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-cyan group-hover:scale-110 transition-transform" />
+                  <span>Enroll Now</span>
+                </button>
+                <button 
+                  onClick={onOpenBrochure}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 group"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-cyan group-hover:scale-110 transition-transform" />
+                  <span>Download Brochure</span>
+                </button>
+                <button 
+                  onClick={() => {
+                    const el = document.getElementById('contact');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 group"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-cyan group-hover:scale-110 transition-transform" />
+                  <span>Contact Our Team</span>
+                </button>
               </div>
             </div>
 
             <div className="flex flex-col gap-3 shrink-0">
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-purple to-brand-cyan hover:brightness-110 transition-all shadow-lg whitespace-nowrap"
-                id="why-enroll-cta"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:border-white/20 hover:-translate-y-0.5 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12),0_0_20px_rgba(255,255,255,0.1)] transition-all whitespace-nowrap group"
               >
-                <span>Make the test to options</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Join Alphabet Educational Hub</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>

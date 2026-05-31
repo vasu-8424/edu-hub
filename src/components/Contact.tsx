@@ -126,7 +126,7 @@ export default function Contact() {
               <div>
                 <span className="block text-[11px] text-slate-500 uppercase tracking-widest font-bold mb-1">Main Center</span>
                 <span className="block text-white font-serif font-black text-sm md:text-base group-hover:text-emerald-400 transition-colors">
-                  Santhi Nagar, Kakinada, AP
+                  Santhi Nagar, Kakinada, AP, India
                 </span>
                 <span className="block text-xs text-slate-400 font-light mt-1">Pincode: 533003</span>
               </div>
@@ -288,7 +288,7 @@ export default function Contact() {
                     Our Locations
                   </span>
                   <h3 className="font-serif text-3xl font-extrabold text-white tracking-tight mt-3 mb-6">
-                    Find Us in Kakinada
+                    Find Us
                   </h3>
                 </div>
 

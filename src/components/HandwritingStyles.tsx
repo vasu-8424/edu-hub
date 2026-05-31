@@ -24,9 +24,9 @@ export default function HandwritingStyles() {
       glowColor: 'bg-pink-400'
     },
     {
-      title: 'Universal Alphabet',
+      title: 'Universal Style',
       icon: <PenTool className="w-8 h-8 text-emerald-400" />,
-      description: 'A standard, disconnected writing style focused on maximum legibility and simplicity. Print is highly effective for clear, professional communication and foundational learning.',
+      description: 'A standard, disconnected writing style with a globally readable character style, designed for maximum legibility, simplicity, and clear communication.',
       borderColor: 'border-emerald-400/20 hover:border-emerald-400/50',
       glowColor: 'bg-emerald-400'
     }

@@ -128,9 +128,9 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
                     {item.label === 'Courses' && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
                         <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
-                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Professional Diploma Course</a>
                         <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Foundation Level Course</a>
                         <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Expert Level Course</a>
+                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Professional Diploma Course</a>
                         <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Calligraphy & Creative Writing</a>
                         <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Dysgraphia Learning Support</a>
                       </div>

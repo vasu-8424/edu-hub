@@ -103,7 +103,10 @@ export default function App() {
         <FounderMessage />
 
         {/* 4. Competitive visual advantages */}
-        <WhyChooseUs />
+        <WhyChooseUs 
+          onOpenEnroll={() => setEnrollOpen(true)} 
+          onOpenBrochure={() => setBrochureOpen(true)} 
+        />
 
         {/* 5. Detailed structured course tracks with accordions */}
         <Courses />

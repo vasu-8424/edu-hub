@@ -1,7 +1,11 @@
-import { Quote, Award, GraduationCap, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { Quote, Award, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function FounderMessage() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
+
     <section id="founder" className="relative py-24 px-4 md:px-8 overflow-hidden bg-black/10">
       {/* Decorative background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-brand-purple/5 blur-3xl -z-10" />
@@ -54,36 +58,11 @@ export default function FounderMessage() {
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 glass-panel rounded-2xl p-3 shadow-lg flex items-center gap-2 border border-white/10 animate-float">
                 <Award className="w-4 h-4 text-brand-purple" />
-                <span className="text-[10px] font-bold text-white tracking-wider uppercase">Since 2008</span>
+                <span className="text-[10px] font-bold text-white tracking-wider uppercase">Visionary Leadership</span>
               </div>
             </div>
 
-            {/* Credentials */}
-            <div className="glass-panel rounded-2xl p-5 w-full max-w-[320px] mx-auto lg:mx-0 border border-white/10">
-              <span className="text-[10px] font-mono font-bold text-brand-cyan uppercase tracking-widest block mb-3">
-                Credentials
-              </span>
-              <div className="flex flex-col gap-3">
-                <div className="flex items-start gap-3">
-                  <GraduationCap className="w-4 h-4 text-brand-purple shrink-0 mt-0.5" />
-                  <span className="text-xs text-slate-300 font-light leading-relaxed">
-                    Founder & Director — Alphabet Educational Hub
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Award className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-                  <span className="text-xs text-slate-300 font-light leading-relaxed">
-                    Expert in Professional Handwriting Teacher Training
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-pink-400 shrink-0 mt-0.5" />
-                  <span className="text-xs text-slate-300 font-light leading-relaxed">
-                    Kakinada's Most Trusted Handwriting Academy since 2008
-                  </span>
-                </div>
-              </div>
-            </div>
+
           </div>
 
           {/* Right: Message Content */}
@@ -107,13 +86,29 @@ export default function FounderMessage() {
                   <p>
                     We have spent years perfecting our craft to deliver advanced handwriting training and innovative teaching methodologies. We believe handwriting is more than writing — it builds <span className="text-brand-cyan font-medium">confidence, concentration, discipline, and self-expression</span>.
                   </p>
-                  <p>
-                    Over the years, we have proudly trained thousands of students and developed professional handwriting teachers with strong career opportunities and <span className="text-brand-cyan font-semibold">100% placement assistance</span>.
-                  </p>
-                  <p>
-                    At Alphabet Educational Hub, our mission is not only to improve handwriting but also to create confident learners, skilled educators, and inspiring professionals for the future.
-                  </p>
+                  {isExpanded && (
+                    <div className="space-y-5 animate-in fade-in slide-in-from-top-4 duration-500">
+                      <p>
+                        Over the years, we have proudly trained thousands of students and developed professional handwriting teachers with strong career opportunities and <span className="text-brand-cyan font-semibold">100% placement assistance</span>.
+                      </p>
+                      <p>
+                        At Alphabet Educational Hub, our mission is not only to improve handwriting but also to create confident learners, skilled educators, and inspiring professionals for the future.
+                      </p>
+                    </div>
+                  )}
                 </div>
+
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="mt-6 flex items-center gap-2 text-xs font-semibold text-brand-cyan hover:text-brand-purple transition-colors uppercase tracking-widest group"
+                >
+                  {isExpanded ? 'Read Less' : 'Read More'}
+                  {isExpanded ? (
+                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                  )}
+                </button>
 
                 {/* Closing line */}
                 <div className="mt-8 pt-6 border-t border-white/10">
@@ -136,20 +131,6 @@ export default function FounderMessage() {
               </div>
             </div>
 
-            {/* Highlight stats row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4" id="founder-stats">
-              {[
-                { value: '2008', label: 'Established', color: 'text-brand-cyan' },
-                { value: '2,00,000+', label: 'Students Trained', color: 'text-brand-purple' },
-                { value: '20,000+', label: 'Teachers Empowered', color: 'text-pink-400' },
-                { value: '100%', label: 'Placement Support', color: 'text-emerald-400' }
-              ].map((stat) => (
-                <div key={stat.label} className="glass-panel p-4 rounded-2xl text-center border border-white/5 hover:border-brand-purple/20 transition-colors">
-                  <span className={`block text-xl font-serif font-extrabold ${stat.color}`}>{stat.value}</span>
-                  <span className="block text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-1">{stat.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

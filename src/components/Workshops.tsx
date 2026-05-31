@@ -150,7 +150,7 @@ export default function Workshops() {
                   transition={{ type: "spring", stiffness: 60, damping: 15 }}
                 />
               )}
-              <span className="relative z-10">Students Workshop</span>
+              <span className="relative z-10">School Workshops</span>
             </button>
             <button 
               onClick={() => setActiveTab('teachers')}
@@ -165,7 +165,7 @@ export default function Workshops() {
                   transition={{ type: "spring", stiffness: 60, damping: 15 }}
                 />
               )}
-              <span className="relative z-10">Teachers Workshop</span>
+              <span className="relative z-10">Teacher Training Workshops</span>
             </button>
           </div>
         </div>
@@ -179,6 +179,51 @@ export default function Workshops() {
             ? renderGallery(studentImages, studentIndex, goToPrevStudent, goToNextStudent, setStudentIndex)
             : renderGallery(teacherImages, teacherIndex, goToPrevTeacher, goToNextTeacher, setTeacherIndex)
           }
+
+          {/* Workshop Descriptions */}
+          <div className="mt-12 max-w-4xl mx-auto glass-panel p-8 md:p-10 rounded-[2rem] border border-white/10 shadow-2xl">
+            {activeTab === 'students' ? (
+              <motion.div 
+                key="school"
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+                className="text-center"
+              >
+                <h3 className="font-serif text-3xl font-bold text-white mb-6">School Workshops</h3>
+                <p className="text-base md:text-lg text-slate-300 font-light leading-relaxed">
+                  Customized handwriting workshops for schools to improve student handwriting, learning outcomes, and writing excellence. Transform messy writing into neat, clear handwriting quickly and effectively just within 3 hrs.
+                </p>
+              </motion.div>
+            ) : (
+              <motion.div 
+                key="teacher"
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+              >
+                <h3 className="font-serif text-3xl font-bold text-white mb-6 text-center">Teacher Training Workshops</h3>
+                <p className="text-base md:text-lg text-slate-300 font-light leading-relaxed text-center mb-8">
+                  Professional handwriting training programs for teachers and educators to enhance teaching skills, classroom effectiveness, and complete handwriting improvement techniques just in 1 hr.
+                </p>
+                <div className="bg-white/5 border border-white/10 p-8 rounded-2xl mb-8 flex flex-col md:flex-row items-center gap-8 justify-center">
+                  <div className="shrink-0 text-brand-purple">
+                    <h4 className="font-bold text-lg tracking-wide uppercase mb-1">Topics Covered</h4>
+                    <div className="w-12 h-1 bg-brand-purple rounded-full"></div>
+                  </div>
+                  <ul className="text-slate-300 font-light space-y-3 text-left">
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-brand-purple mt-2 shrink-0 shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
+                      <span>Dysgraphia awareness and supportive intervention techniques</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-brand-purple mt-2 shrink-0 shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
+                      <span>Handwriting correction and improvement strategies</span>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-base md:text-lg text-slate-300 font-light leading-relaxed text-center">
+                  These workshops empower educators to become confident <strong className="text-white font-medium">Professional Handwriting Teachers</strong>, capable of delivering structured, high-impact handwriting training in schools and institutions.
+                </p>
+              </motion.div>
+            )}
+          </div>
         </motion.div>
       </div>
     </section>
