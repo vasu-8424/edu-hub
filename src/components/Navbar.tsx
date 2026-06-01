@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu, X, GraduationCap, ArrowRight, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -12,6 +12,34 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.slice(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        const navHeight = document.getElementById('navbar')?.offsetHeight || 80;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - navHeight - 10,
+          behavior: 'smooth'
+        });
+        setMobileMenuOpen(false);
+        
+        // Find the main heading of the section to blink
+        const heading = element.querySelector('h2') || element.querySelector('h3');
+        if (heading) {
+          heading.classList.remove('animate-blink-highlight'); // reset if already blinking
+          void heading.offsetWidth; // trigger reflow
+          heading.classList.add('animate-blink-highlight');
+          setTimeout(() => {
+            heading.classList.remove('animate-blink-highlight');
+          }, 1500);
+        }
+      }
+    }
+  };
 
   const navItems = [
     { label: 'About', href: '#about' },
@@ -98,6 +126,7 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
                       href={item.href}
                       target={item.isExternal ? '_blank' : undefined}
                       rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                      onClick={item.isExternal ? undefined : (e) => handleScrollTo(e, item.href)}
                       className={`block px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors relative z-10 ${
                         isActive || isHovered ? 'text-white' : 'text-slate-400'
                       }`}
@@ -128,35 +157,35 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
                     {item.label === 'Courses' && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
                         <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
-                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Foundation Level Course</a>
-                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Expert Level Course</a>
-                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Professional Diploma Course</a>
-                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Calligraphy & Creative Writing</a>
-                        <a href="#courses" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Dysgraphia Learning Support</a>
+                        <a href="#course-foundation" onClick={(e) => handleScrollTo(e, '#course-foundation')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Foundation Level Course</a>
+                        <a href="#course-expert" onClick={(e) => handleScrollTo(e, '#course-expert')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Expert Level Course</a>
+                        <a href="#course-diploma" onClick={(e) => handleScrollTo(e, '#course-diploma')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Professional Diploma Course</a>
+                        <a href="#course-calligraphy" onClick={(e) => handleScrollTo(e, '#course-calligraphy')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Calligraphy & Creative Writing</a>
+                        <a href="#course-dysgraphia" onClick={(e) => handleScrollTo(e, '#course-dysgraphia')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Dysgraphia Learning Support</a>
                       </div>
                     )}
                     {item.label === 'Books' && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
                         <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
-                        <a href="#materials" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Cursive Handwriting</a>
-                        <a href="#materials" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Lucida Handwriting</a>
-                        <a href="#materials" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Telugu Handwriting</a>
+                        <a href="#books-cursive" onClick={(e) => handleScrollTo(e, '#books-cursive')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Cursive Handwriting</a>
+                        <a href="#books-lucida" onClick={(e) => handleScrollTo(e, '#books-lucida')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Lucida Handwriting</a>
+                        <a href="#books-telugu" onClick={(e) => handleScrollTo(e, '#books-telugu')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Telugu Handwriting</a>
                       </div>
                     )}
                     {item.label === 'Workshops' && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
                         <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
-                        <a href="#workshops" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Students Workshop</a>
-                        <a href="#workshops" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Teachers Workshop</a>
+                        <a href="#workshops" onClick={(e) => handleScrollTo(e, '#workshops')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Students Workshop</a>
+                        <a href="#workshops" onClick={(e) => handleScrollTo(e, '#workshops')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Teachers Workshop</a>
                       </div>
                     )}
                     {item.label === 'Career Opportunities' && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0d0a20]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col p-2 transform group-hover:translate-y-0 translate-y-2">
                         <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
-                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Handwriting Trainer</a>
-                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Internship Programs</a>
-                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Franchise Opportunities</a>
-                        <a href="#careers" className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Marketing Manager</a>
+                        <a href="#career-trainer" onClick={(e) => handleScrollTo(e, '#career-trainer')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Handwriting Trainer</a>
+                        <a href="#career-internship" onClick={(e) => handleScrollTo(e, '#career-internship')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Internship Programs</a>
+                        <a href="#career-franchise" onClick={(e) => handleScrollTo(e, '#career-franchise')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Franchise Opportunities</a>
+                        <a href="#career-marketing" onClick={(e) => handleScrollTo(e, '#career-marketing')} className="px-4 py-2.5 hover:bg-white/10 rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors">Marketing Manager</a>
                       </div>
                     )}
                   </div>
@@ -224,7 +253,7 @@ export default function Navbar({ onOpenEnroll, onOpenBrochure }: NavbarProps) {
                     href={item.href}
                     target={item.isExternal ? '_blank' : undefined}
                     rel={item.isExternal ? 'noopener noreferrer' : undefined}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={item.isExternal ? () => setMobileMenuOpen(false) : (e) => handleScrollTo(e, item.href)}
                     className={`py-3 rounded-2xl text-lg font-serif tracking-wider transition-all ${
                       !item.isExternal && activeSection === item.href.slice(1)
                         ? 'text-white bg-gradient-to-r from-brand-purple/20 to-brand-cyan/20 border border-white/10 font-bold'

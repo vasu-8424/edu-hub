@@ -70,7 +70,7 @@ export default function Footer() {
                 <div className="p-2 rounded-lg bg-white/5 border border-white/5 group-hover:bg-pink-500/10 group-hover:border-pink-500/30 transition-colors">
                   <Clock className="w-4 h-4 text-pink-500" />
                 </div>
-                <span className="group-hover:text-white transition-colors leading-relaxed">Santhi Nagar, Kakinada, AP – 533003</span>
+                <span className="group-hover:text-white transition-colors leading-relaxed">Santhi Nagar, Andhra Pradesh, India – 533003</span>
               </div>
             </div>
 

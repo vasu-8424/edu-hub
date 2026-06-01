@@ -247,6 +247,7 @@ export default function BooksSection() {
             
             return (
               <motion.div 
+                id={`books-${category.id}`}
                 variants={cardVariants}
                 key={category.id} 
                 className="group flex flex-col items-center justify-start p-1 bg-gradient-to-br from-white/10 to-transparent rounded-[2.5rem] relative overflow-hidden transition-transform duration-500 hover:scale-[1.02]"

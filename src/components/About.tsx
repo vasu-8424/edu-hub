@@ -76,8 +76,21 @@ export default function About() {
               <div className="glass-panel p-10 md:p-12 rounded-[2rem] bg-[#090814]/80 backdrop-blur-xl relative z-10">
                 <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-[100px] opacity-20 bg-brand-cyan pointer-events-none" />
                 
-                {/* Stats Grid at the top */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10">
+                {/* Text Content */}
+                <div className="mb-10">
+                  <span className="text-[11px] font-bold text-brand-cyan uppercase tracking-[0.25em] block mb-4">
+                    About Us
+                  </span>
+                  <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                    India's Trusted Handwriting Education Hub
+                  </h3>
+                  <p className="text-base text-slate-300 leading-relaxed font-light">
+                    For over a decade, we have been dedicated to transforming lives through the art of handwriting. Our programs are uniquely designed to foster cognitive development, fine motor skills, and an enduring appreciation for beautiful penmanship.
+                  </p>
+                </div>
+
+                {/* Stats Grid at the bottom */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {[
                     { value: '2,00,000+', label: 'Students Trained', color: 'text-brand-cyan' },
                     { value: '20,000+', label: 'Teachers Empowered', color: 'text-brand-purple' },
@@ -94,17 +107,6 @@ export default function About() {
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Text Content below stats */}
-                <span className="text-[11px] font-bold text-brand-cyan uppercase tracking-[0.25em] block mb-4">
-                  About Us
-                </span>
-                <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                  India's Trusted Handwriting Education Hub
-                </h3>
-                <p className="text-base text-slate-300 leading-relaxed font-light">
-                  For over a decade, we have been dedicated to transforming lives through the art of handwriting. Our programs are uniquely designed to foster cognitive development, fine motor skills, and an enduring appreciation for beautiful penmanship.
-                </p>
               </div>
             </div>
           </motion.div>
@@ -118,9 +120,11 @@ export default function About() {
             className="group relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden"
             id="about-vision-card"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            
-            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col bg-[#090814]/90 backdrop-blur-2xl">
+            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col overflow-hidden bg-[#090814]/60">
+              {/* Background Image */}
+              <img src="/vision_bg.png" alt="Vision Background" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 pointer-events-none mix-blend-screen" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#090814]/90 via-transparent to-transparent pointer-events-none" />
+              
               <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-brand-cyan/20 blur-[100px] pointer-events-none group-hover:bg-brand-cyan/30 transition-colors duration-700" />
 
               <div className="relative z-10 flex flex-col h-full">
@@ -140,7 +144,7 @@ export default function About() {
                 </div>
 
                 {/* Text */}
-                <p className="text-base text-slate-300 leading-relaxed font-light mt-auto">
+                <p className="text-base text-slate-300 leading-relaxed font-light mt-4">
                   To become India's premier education and teacher training academy by fostering confidence, creativity, and communication, while creating highly skilled professionals who inspire future generations.
                 </p>
               </div>
@@ -153,9 +157,11 @@ export default function About() {
             className="group relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden"
             id="about-mission-card"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col overflow-hidden bg-[#090814]/60">
+              {/* Background Image */}
+              <img src="/mission_bg.png" alt="Mission Background" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 pointer-events-none mix-blend-screen" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#090814]/90 via-transparent to-transparent pointer-events-none" />
 
-            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col bg-[#090814]/90 backdrop-blur-2xl">
               <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-brand-purple/20 blur-[100px] pointer-events-none group-hover:bg-brand-purple/30 transition-colors duration-700" />
 
               <div className="relative z-10 flex flex-col h-full">
@@ -175,7 +181,7 @@ export default function About() {
                 </div>
 
                 {/* Points */}
-                <div className="flex flex-col gap-4 mt-auto">
+                <div className="flex flex-col gap-4 mt-4">
                   {[
                     'To train and empower aspiring educators to become certified Professional Handwriting Teachers with advanced teaching methodologies and practical expertise.',
                     'To support students, schools, teachers, and professionals with personalized learning experiences and quality educational guidance.',

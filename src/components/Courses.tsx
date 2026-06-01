@@ -40,7 +40,7 @@ export default function Courses() {
             <div className="flex flex-col border-b lg:border-b-0 lg:border-r border-white/10">
               
               {/* Foundation Level */}
-              <div className="p-8 md:p-10 border-b border-white/10 hover:bg-white/[0.02] transition-colors group flex-1">
+              <div id="course-foundation" className="p-8 md:p-10 border-b border-white/10 hover:bg-white/[0.02] transition-colors group flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-cyan to-blue-600 flex items-center justify-center text-lg font-black text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">1</div>
                   <div>
@@ -53,7 +53,7 @@ export default function Courses() {
                 <p className="text-sm text-slate-300 font-light leading-relaxed mb-6">
                   A beginner-friendly program designed to build strong fundamentals in handwriting teaching and correction.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
                   <div>
                     <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-3 flex items-center gap-2"><BookOpen className="w-3 h-3 text-brand-cyan" /> Learn</h4>
                     <ul className="space-y-2">
@@ -62,26 +62,11 @@ export default function Courses() {
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-3 flex items-center gap-2"><Clock className="w-3 h-3 text-brand-cyan" /> Duration</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider block">Graduates</span>
-                        <p className="text-xs text-brand-cyan">3 Months Course</p>
-                        <p className="text-[10px] text-slate-400">+3 Months Internship</p>
-                      </div>
-                      <div>
-                        <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider block">Non-Graduates</span>
-                        <p className="text-xs text-brand-cyan">3 Months Course</p>
-                        <p className="text-[10px] text-slate-400">+6 Months Internship</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* Expert Level */}
-              <div className="p-8 md:p-10 hover:bg-white/[0.02] transition-colors group flex-1">
+              <div id="course-expert" className="p-8 md:p-10 hover:bg-white/[0.02] transition-colors group flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-green-600 flex items-center justify-center text-lg font-black text-white shadow-[0_0_15px_rgba(52,211,153,0.4)]">2</div>
                   <div>
@@ -94,7 +79,7 @@ export default function Courses() {
                 <p className="text-sm text-slate-300 font-light leading-relaxed mb-6">
                   An advanced program focused on Lucida writing style and dysgraphia identification.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
                   <div>
                     <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-3 flex items-center gap-2"><BookOpen className="w-3 h-3 text-emerald-400" /> Learn</h4>
                     <ul className="space-y-2">
@@ -103,28 +88,13 @@ export default function Courses() {
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-3 flex items-center gap-2"><Clock className="w-3 h-3 text-emerald-400" /> Duration</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider block">Graduates</span>
-                        <p className="text-xs text-emerald-400">3 Months Course</p>
-                        <p className="text-[10px] text-slate-400">+3 Months Internship</p>
-                      </div>
-                      <div>
-                        <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider block">Non-Graduates</span>
-                        <p className="text-xs text-emerald-400">3 Months Course</p>
-                        <p className="text-[10px] text-slate-400">+6 Months Internship</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
             </div>
 
             {/* RIGHT COLUMN: Professional Diploma */}
-            <div className="p-8 md:p-12 bg-gradient-to-br from-brand-purple/5 to-transparent hover:bg-brand-purple/10 transition-colors group relative overflow-hidden flex flex-col justify-center">
+            <div id="course-diploma" className="p-8 md:p-12 bg-gradient-to-br from-brand-purple/5 to-transparent hover:bg-brand-purple/10 transition-colors group relative overflow-hidden flex flex-col justify-center">
               <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-brand-purple/20 blur-[100px] pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-4">
@@ -151,28 +121,61 @@ export default function Courses() {
                       ))}
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                  <div>
-                    <h4 className="text-sm font-bold text-white tracking-widest uppercase mb-5 flex items-center gap-3"><Clock className="w-5 h-5 text-brand-purple" /> Duration</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 rounded-2xl bg-black/20 border border-white/5">
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <GraduationCap className="w-4 h-4 text-slate-400" />
-                          <span className="text-xs font-bold text-slate-200 uppercase tracking-wider block">Graduates</span>
-                        </div>
-                        <p className="text-sm text-brand-purple font-medium">3 Months Course</p>
-                        <p className="text-xs text-slate-400 font-light">+3 Months Internship</p>
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <ShieldCheck className="w-4 h-4 text-slate-400" />
-                          <span className="text-xs font-bold text-slate-200 uppercase tracking-wider block">Non-Graduates</span>
-                        </div>
-                        <p className="text-sm text-brand-purple font-medium">6 Months Course</p>
-                        <p className="text-xs text-slate-400 font-light">+6 Months Internship</p>
-                      </div>
-                    </div>
-                  </div>
+          {/* Calligraphy and Dysgraphia */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-white/10">
+            {/* Calligraphy */}
+            <div id="course-calligraphy" className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-white/10 hover:bg-white/[0.02] transition-colors group flex-1">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center text-lg font-black text-white shadow-[0_0_15px_rgba(244,114,182,0.4)]">4</div>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-white group-hover:text-pink-400 transition-colors">Calligraphy & Creative Writing</h3>
+                </div>
+              </div>
+              <div className="inline-block px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-[10px] font-bold tracking-widest mt-1 mb-4 w-fit">
+                EXPRESSIVE ART
+              </div>
+              <p className="text-sm text-slate-300 font-light leading-relaxed mb-6">
+                Develop artistic lettering and creative writing skills to enhance personal expression and professional presentation.
+              </p>
+              <div>
+                <div>
+                  <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-3 flex items-center gap-2"><BookOpen className="w-3 h-3 text-pink-400" /> Learn</h4>
+                  <ul className="space-y-2">
+                    {['Calligraphy strokes & tools', 'Creative composition', 'Artistic lettering', 'Presentation skills'].map((item, i) => (
+                      <li key={i} className="flex gap-2 items-start text-xs text-slate-300 font-light"><Check className="w-3 h-3 text-pink-400 shrink-0 mt-0.5" />{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Dysgraphia */}
+            <div id="course-dysgraphia" className="p-8 md:p-10 hover:bg-white/[0.02] transition-colors group flex-1">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-lg font-black text-white shadow-[0_0_15px_rgba(96,165,250,0.4)]">5</div>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Dysgraphia Learning Support</h3>
+                </div>
+              </div>
+              <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-widest mt-1 mb-4 w-fit">
+                SPECIALIZED SUPPORT
+              </div>
+              <p className="text-sm text-slate-300 font-light leading-relaxed mb-6">
+                Specialized training in identifying and supporting students with dysgraphia and related handwriting difficulties.
+              </p>
+              <div>
+                <div>
+                  <h4 className="text-xs font-bold text-white tracking-widest uppercase mb-3 flex items-center gap-2"><BookOpen className="w-3 h-3 text-blue-400" /> Learn</h4>
+                  <ul className="space-y-2">
+                    {['Dysgraphia identification', 'Intervention strategies', 'Motor skill development', 'Supportive environment'].map((item, i) => (
+                      <li key={i} className="flex gap-2 items-start text-xs text-slate-300 font-light"><Check className="w-3 h-3 text-blue-400 shrink-0 mt-0.5" />{item}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

@@ -187,3 +187,26 @@ html {
 .btn-premium:hover::after {
   opacity: 0.6;
 }
+
+@keyframes blinkHighlight {
+  0%, 100% {
+    color: inherit;
+    text-shadow: none;
+    transform: scale(1);
+  }
+  20%, 80% {
+    color: #06b6d4;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 30px rgba(6, 182, 212, 0.4);
+    transform: scale(1.02);
+  }
+  50% {
+    color: #d946ef;
+    text-shadow: 0 0 25px rgba(217, 70, 239, 0.9), 0 0 40px rgba(217, 70, 239, 0.5);
+    transform: scale(1.04);
+  }
+}
+
+.animate-blink-highlight {
+  animation: blinkHighlight 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s;
+}

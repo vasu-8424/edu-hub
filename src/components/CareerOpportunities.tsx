@@ -113,6 +113,7 @@ export default function CareerOpportunities() {
             <motion.div
               variants={itemVariants}
               key={career.id}
+              id={`career-${career.id}`}
               className="group relative p-[1px] rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden"
             >
               {/* Animated Glow Border */}

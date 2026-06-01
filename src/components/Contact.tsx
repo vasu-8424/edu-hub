@@ -126,7 +126,7 @@ export default function Contact() {
               <div>
                 <span className="block text-[11px] text-slate-500 uppercase tracking-widest font-bold mb-1">Main Center</span>
                 <span className="block text-white font-serif font-black text-sm md:text-base group-hover:text-emerald-400 transition-colors">
-                  Santhi Nagar, Kakinada, AP, India
+                  Santhi Nagar, Andhra Pradesh, India
                 </span>
                 <span className="block text-xs text-slate-400 font-light mt-1">Pincode: 533003</span>
               </div>
@@ -227,7 +227,7 @@ export default function Contact() {
                             onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                             className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all cursor-pointer appearance-none"
                           >
-                            <option className="bg-[#090814] text-white" value="diploma">Professional Diploma Course (6 Months)</option>
+                            <option className="bg-[#090814] text-white" value="diploma">Professional Diploma Course</option>
                             <option className="bg-[#090814] text-white" value="foundation">Foundation Level Handwriting Trainer Course</option>
                             <option className="bg-[#090814] text-white" value="expert">Expert Level Handwriting Trainer Course</option>
                             <option className="bg-[#090814] text-white" value="calligraphy">Calligraphy &amp; Creative Writing Training</option>
@@ -300,7 +300,7 @@ export default function Contact() {
                   <div className="absolute inset-0 bg-brand-cyan/20 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
                   <iframe
                     title="Alphabet Educational Hub Location"
-                    src="https://maps.google.com/maps?q=Alphabet%20Educational%20Hub,%20Kakinada&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Alphabet%20Educational%20Hub,%20Andhra%20Pradesh&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.2) brightness(0.9) grayscale(20%)' }}

@@ -230,9 +230,9 @@ export default function App() {
                       onChange={(e) => setEnrollForm({ ...enrollForm, course: e.target.value })}
                       className="w-full bg-[#0d0a20] border border-white/10 rounded-xl px-4 py-3 text-xs text-slate-300 focus:outline-none focus:border-brand-cyan"
                     >
-                      <option className="bg-[#8b5cf6] text-white" value="diploma">Professional Diploma Course (6 Months)</option>
-                      <option className="bg-[#8b5cf6] text-white" value="foundation">Foundation Level Handwriting Trainer Course (3 Months)</option>
-                      <option className="bg-[#8b5cf6] text-white" value="expert">Expert Level Handwriting Trainer Course (3 Months)</option>
+                      <option className="bg-[#8b5cf6] text-white" value="diploma">Professional Diploma Course</option>
+                      <option className="bg-[#8b5cf6] text-white" value="foundation">Foundation Level Handwriting Trainer Course</option>
+                      <option className="bg-[#8b5cf6] text-white" value="expert">Expert Level Handwriting Trainer Course</option>
                       <option className="bg-[#8b5cf6] text-white" value="calligraphy">Calligraphy &amp; Creative Writing Training</option>
                       <option className="bg-[#8b5cf6] text-white" value="dysgraphia">Dysgraphia Identification &amp; Learning Support</option>
                       <option className="bg-[#8b5cf6] text-white" value="school-workshop">School Workshop (3 Hours)</option>
