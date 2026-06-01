@@ -33,6 +33,21 @@ export default function App() {
     e.preventDefault();
     if (!enrollForm.name || !enrollForm.phone) return;
     
+    // Redirect to WhatsApp with pre-filled details
+    const courseNames: Record<string, string> = {
+      diploma: 'Professional Diploma Course',
+      foundation: 'Foundation Level Handwriting Trainer',
+      expert: 'Expert Level Handwriting Trainer',
+      calligraphy: 'Calligraphy & Creative Writing',
+      dysgraphia: 'Dysgraphia Learning Support'
+    };
+    
+    const courseName = courseNames[enrollForm.course] || enrollForm.course;
+    const message = encodeURIComponent(
+      `Hi! I'm ${enrollForm.name}.\n\nI would like to enroll in the ${courseName} program.\n\nMy Details:\nPhone: ${enrollForm.phone}\nEmail: ${enrollForm.email || 'N/A'}`
+    );
+    window.open(`https://wa.me/919063526196?text=${message}`, '_blank');
+
     // Generate a beautiful, unique registration ID
     const sampleId = `REG-2026-${Math.floor(Math.random() * 90000 + 10000)}`;
     setRegistrationId(sampleId);

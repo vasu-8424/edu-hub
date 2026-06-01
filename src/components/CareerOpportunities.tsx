@@ -22,7 +22,7 @@ export default function CareerOpportunities() {
       icon: <GraduationCap className="w-6 h-6 text-[#22d3ee]" />,
       gradient: 'from-[#22d3ee] to-blue-600',
       glowColor: 'bg-[#22d3ee]/20',
-      description: 'Become a certified Professional Handwriting Trainer and educator. Gain expert training, teaching methodologies, and practical experience to build a successful career in handwriting education.',
+      description: 'Step into a high-demand teaching role. We equip you with advanced pedagogical skills, practical classroom strategies, and recognized credentials to launch a thriving educational career.',
       highlights: []
     },
     {

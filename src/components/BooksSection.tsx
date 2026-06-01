@@ -28,8 +28,8 @@ export default function BooksSection() {
       editions: [
         {
           id: 'cursive-junior',
-          title: 'Junior\'s Edition',
-          edition: 'Classes 1 to 5',
+          title: 'Cursive Junior',
+          edition: 'Cursive Junior (Class 1-5)',
           description: 'This edition helps young learners develop neat, clear, and confident handwriting.',
           coverColor: 'from-brand-purple to-indigo-900',
           textAccent: 'text-brand-purple',
@@ -39,8 +39,8 @@ export default function BooksSection() {
         },
         {
           id: 'cursive-senior',
-          title: 'Seniors Edition',
-          edition: 'Classes 6 to 10',
+          title: 'Cursive Senior',
+          edition: 'Cursive Senior (Class 6-10)',
           description: 'Designed for older students to achieve Neat, Fast, and Fluent Handwriting in 45 Days.',
           coverColor: 'from-brand-purple to-indigo-900',
           textAccent: 'text-brand-purple',
@@ -57,8 +57,8 @@ export default function BooksSection() {
       editions: [
         {
           id: 'lucida-junior',
-          title: 'Junior\'s Edition',
-          edition: 'Classes 1 to 5',
+          title: 'Lucida Junior',
+          edition: 'Lucida Junior (Class 1-5)',
           description: 'This edition helps young learners develop neat, clear, and confident handwriting.',
           coverColor: 'from-brand-cyan to-blue-900',
           textAccent: 'text-brand-cyan',
@@ -68,8 +68,8 @@ export default function BooksSection() {
         },
         {
           id: 'lucida-senior',
-          title: 'Seniors Edition',
-          edition: 'Classes 6 to 10',
+          title: 'Lucida Senior',
+          edition: 'Lucida Senior (Class 6-10)',
           description: 'Designed for older students to achieve Neat, Fast, and Fluent Handwriting in 45 Days.',
           coverColor: 'from-brand-cyan to-blue-900',
           textAccent: 'text-brand-cyan',
@@ -87,7 +87,7 @@ export default function BooksSection() {
         {
           id: 'telugu-level1',
           title: 'Telugu — Level 1',
-          edition: 'Level 1',
+          edition: 'Level - 1',
           description: 'Beginner level focusing on basic strokes, curves, and standard letter formations.',
           coverColor: 'from-pink-600 to-rose-950',
           textAccent: 'text-pink-400',
@@ -98,7 +98,7 @@ export default function BooksSection() {
         {
           id: 'telugu-level2',
           title: 'Telugu — Level 2',
-          edition: 'Level 2',
+          edition: 'Level - 2',
           description: 'Intermediate level practicing letter combinations and basic words.',
           coverColor: 'from-pink-600 to-rose-950',
           textAccent: 'text-pink-400',
@@ -109,7 +109,7 @@ export default function BooksSection() {
         {
           id: 'telugu-level3',
           title: 'Telugu — Level 3',
-          edition: 'Level 3',
+          edition: 'Level - 3',
           description: 'Advanced word formations and short sentences practice.',
           coverColor: 'from-pink-600 to-rose-950',
           textAccent: 'text-pink-400',
@@ -120,7 +120,7 @@ export default function BooksSection() {
         {
           id: 'telugu-level4',
           title: 'Telugu — Level 4',
-          edition: 'Level 4',
+          edition: 'Level - 4',
           description: 'Paragraph writing and fluency building exercises.',
           coverColor: 'from-pink-600 to-rose-950',
           textAccent: 'text-pink-400',
@@ -131,7 +131,7 @@ export default function BooksSection() {
         {
           id: 'telugu-level5',
           title: 'Telugu — Level 5',
-          edition: 'Level 5',
+          edition: 'Level - 5',
           description: 'Mastery level for fast, neat, and continuous writing.',
           coverColor: 'from-pink-600 to-rose-950',
           textAccent: 'text-pink-400',
@@ -300,13 +300,16 @@ export default function BooksSection() {
                       <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-cyan pointer-events-none transition-transform group-hover/select:-translate-y-1" />
                     </div>
                     <a 
-                      href={`https://wa.me/919063526196?text=Hi!%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(activeEdition.title)}%20book.`}
+                      href={`https://wa.me/919063526196?text=Hi!%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(activeEdition.title)}%20book%20for%20150/-`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 flex items-center justify-center gap-2 px-6 py-4 w-full rounded-2xl text-sm font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12),0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 group"
+                      className="mt-5 flex items-center justify-between gap-2 px-6 py-4 w-full rounded-2xl text-sm font-semibold text-white bg-white/[0.06] backdrop-blur-[20px] border border-white/[0.12] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.12),0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 group"
                     >
-                      <ShoppingCart className="w-4 h-4" />
-                      <span>Order {activeEdition.title} Now</span>
+                      <div className="flex items-center gap-2">
+                        <ShoppingCart className="w-4 h-4" />
+                        <span>Order Now</span>
+                      </div>
+                      <span className="bg-brand-cyan/20 text-brand-cyan px-2.5 py-1 rounded-lg text-[11px] tracking-wider border border-brand-cyan/30">Price: 150/-</span>
                     </a>
                   </div>
                 </div>

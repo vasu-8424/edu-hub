@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Contact() {
@@ -183,7 +183,7 @@ export default function Contact() {
                         Admissions Open for 2026
                       </h3>
                       <p className="text-sm text-slate-400 font-light leading-relaxed mb-8">
-                        Begin your transformation today with our Professional Handwriting teacher Training Programs. Enroll now and take the first step toward a confident, skilled, and successful handwriting journey.
+                        Initiate your educational journey today. Secure your spot in our upcoming cohorts and take the first step toward unlocking new academic and professional milestones.
                       </p>
 
                       <div className="space-y-6">
@@ -294,7 +294,7 @@ export default function Contact() {
 
                 {/* Embedded Google Map */}
                 <div 
-                  className="relative h-[280px] md:h-[320px] rounded-2xl border border-white/10 overflow-hidden my-6 flex items-center justify-center bg-[#070519]/70 shadow-inner group"
+                  className="relative flex-1 min-h-[300px] md:min-h-[400px] rounded-2xl border border-white/10 overflow-hidden mt-6 flex items-center justify-center bg-[#070519]/70 shadow-inner group"
                   id="google-map-embed"
                 >
                   <div className="absolute inset-0 bg-brand-cyan/20 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
@@ -310,40 +310,7 @@ export default function Contact() {
                   ></iframe>
                 </div>
 
-                {/* Institute Address Details */}
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm" id="active-hub-details-card">
-                  <span className="text-[11px] font-mono font-bold text-brand-cyan tracking-[0.2em] uppercase mb-2 block">
-                    Main Corporate Hub
-                  </span>
-                  <h4 className="font-serif font-extrabold text-white text-base md:text-lg mb-2">
-                    Alphabet Educational Hub
-                  </h4>
-                  <p className="text-sm text-slate-300 font-light leading-relaxed font-mono">
-                    D.No. 3-16B-93, Santhi Nagar, Kakinada, Andhra Pradesh, India. Pincode: 533003.
-                  </p>
-                </div>
 
-                {/* Secure Footer items social anchors inside form panel */}
-                <div className="flex gap-4 items-center justify-between mt-8 pt-6 border-t border-white/10">
-                  <span className="text-[10px] text-slate-500 font-mono tracking-[0.2em] font-bold uppercase">
-                    Connect With Us
-                  </span>
-
-                  <div className="flex gap-4 text-slate-400">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 hover:scale-110 transition-all" aria-label="Instagram">
-                      <Instagram className="w-5 h-5" />
-                    </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 hover:scale-110 transition-all" aria-label="Facebook">
-                      <Facebook className="w-5 h-5" />
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 hover:scale-110 transition-all" aria-label="Youtube">
-                      <Youtube className="w-5 h-5" />
-                    </a>
-                    <a href="https://linkedin.com/in/alphabet-educational-hub-1a492b199" target="_blank" rel="noopener noreferrer" className="hover:text-[#0a66c2] hover:scale-110 transition-all" aria-label="Linkedin">
-                      <Linkedin className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>

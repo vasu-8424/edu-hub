@@ -89,7 +89,7 @@ export default function FounderMessage() {
                   {isExpanded && (
                     <div className="space-y-5 animate-in fade-in slide-in-from-top-4 duration-500">
                       <p>
-                        Over the years, we have proudly trained thousands of students and developed professional handwriting teachers with strong career opportunities and <span className="text-brand-cyan font-semibold">100% placement assistance</span>.
+                        Over the years, we have proudly mentored thousands of students and cultivated expert educators, ensuring they achieve remarkable success and secure prestigious roles in their chosen paths.
                       </p>
                       <p>
                         At Alphabet Educational Hub, our mission is not only to improve handwriting but also to create confident learners, skilled educators, and inspiring professionals for the future.

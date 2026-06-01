@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, PhoneCall, Sparkles, PencilLine } from 'lucide-react';
+import { ArrowRight, FileText, PhoneCall, Sparkles, PencilLine, Award } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeroProps {
@@ -148,26 +148,12 @@ export default function Hero({ onOpenEnroll, onOpenBrochure }: HeroProps) {
           India's trusted destination for Handwriting Teacher Training with 100% placement assistance, Calligraphy Excellence, and Student Development Programs.
         </motion.p>
 
-        <motion.p variants={itemVariants} className="text-xs sm:text-sm text-slate-400 font-light max-w-2xl leading-relaxed mb-10">
-          Since 2008, Alphabet Educational Hub has empowered thousands of students, teachers, schools, and aspiring educators through expert-designed programs that enhance handwriting, concentration, confidence, creativity, and presentation skills.
-        </motion.p>
 
-        {/* About Us Content Block */}
-        <motion.div variants={itemVariants} className="mb-10 p-[1px] rounded-3xl bg-gradient-to-b from-white/10 to-transparent max-w-4xl relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/10 to-brand-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="px-8 py-7 rounded-3xl bg-[#090814]/80 backdrop-blur-md text-center relative z-10">
-            <span className="text-xs font-bold tracking-[0.25em] text-brand-purple uppercase mb-4 block">
-              About Us
-            </span>
-            <p className="text-sm md:text-base text-slate-300 font-light leading-relaxed">
-              Alphabet Educational Hub provides a comprehensive range of educational services, including in-person and online classes, structured courses, workshops for students and teachers, and professional teacher training programs. Our core offerings include teacher training, handwriting improvement, cursive, Lucida, calligraphy, and creative writing development.
-            </p>
-          </div>
-        </motion.div>
+
 
         {/* CTA Paragraph */}
         <motion.p variants={itemVariants} className="text-sm md:text-base text-brand-purple/90 font-semibold max-w-2xl leading-relaxed mb-10">
-          Join the Professional Handwriting Teacher Training Program and build a rewarding career in handwriting education.
+          Immerse yourself in our premier curriculum and shape a distinguished career in educational excellence.
         </motion.p>
 
         {/* CTA Buttons */}

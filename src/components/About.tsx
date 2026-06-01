@@ -31,6 +31,85 @@ export default function About() {
         viewport={{ once: true, margin: "-100px" }}
         className="max-w-7xl mx-auto"
       >
+        {/* Bottom: Image + floating badge row */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24" id="about-image-row">
+          {/* Image */}
+          <motion.div variants={cardVariants} className="lg:col-span-5 flex justify-center items-center relative" id="about-visual-right">
+            <div className="relative group w-full max-w-[420px]">
+              <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-brand-purple via-[#bfdbfe]/10 to-brand-cyan opacity-30 blur-2xl group-hover:opacity-60 transition-opacity duration-700" />
+              <div className="relative p-[1px] rounded-[2.5rem] bg-gradient-to-br from-white/20 to-transparent">
+                <div className="rounded-[2.5rem] overflow-hidden relative bg-[#0b041c] p-2 shadow-2xl">
+                  <div className="rounded-[2rem] overflow-hidden relative" style={{ aspectRatio: '4/3' }}>
+                    <img
+                      src="/about_handwriting_setup.png"
+                      alt="Professional Handwriting Teacher Training at Alphabet Educational Hub"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover transition-transform duration-1000 filter saturate-[0.85] group-hover:scale-105 group-hover:saturate-100"
+                      id="concept-image"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/20 via-transparent to-brand-cyan/20 pointer-events-none mix-blend-overlay" />
+                    <div className="absolute bottom-5 left-5 right-5 bg-black/40 backdrop-blur-xl px-5 py-4 rounded-2xl border border-white/10 shadow-lg">
+                      <span className="block text-sm font-serif font-bold text-white tracking-wide">
+                        Professional Handwriting Teacher Training
+                      </span>
+                      <span className="block text-xs font-mono text-brand-cyan mt-1.5 uppercase tracking-wider">
+                        100% Placement Assistance · Since 2008
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <motion.div 
+                animate={{ y: [-8, 8, -8] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-6 -right-6 bg-[#090814]/90 backdrop-blur-xl rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex items-center gap-3 border border-brand-purple/30 z-20"
+              >
+                <Award className="w-6 h-6 text-brand-purple" />
+                <span className="text-xs font-bold text-white tracking-widest uppercase">15+ Years Legacy</span>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Right: Additional About text */}
+          <motion.div variants={cardVariants} className="lg:col-span-7 flex flex-col gap-6" id="about-extra-content">
+            <div className="relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden">
+              <div className="glass-panel p-10 md:p-12 rounded-[2rem] bg-[#090814]/80 backdrop-blur-xl relative z-10">
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-[100px] opacity-20 bg-brand-cyan pointer-events-none" />
+                
+                {/* Stats Grid at the top */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10">
+                  {[
+                    { value: '2,00,000+', label: 'Students Trained', color: 'text-brand-cyan' },
+                    { value: '20,000+', label: 'Teachers Empowered', color: 'text-brand-purple' },
+                    { value: '200+', label: 'Schools Associated', color: 'text-pink-400' },
+                    { value: '100%', label: 'Placement Support', color: 'text-emerald-400' }
+                  ].map((stat) => (
+                    <motion.div 
+                      key={stat.label}
+                      whileHover={{ y: -5 }}
+                      className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner hover:bg-white/10 hover:border-white/10 transition-colors"
+                    >
+                      <span className={`block text-2xl sm:text-3xl font-serif font-black tracking-tight ${stat.color} mb-1`}>{stat.value}</span>
+                      <span className="block text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-widest font-semibold">{stat.label}</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Text Content below stats */}
+                <span className="text-[11px] font-bold text-brand-cyan uppercase tracking-[0.25em] block mb-4">
+                  About Us
+                </span>
+                <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                  India's Trusted Handwriting Education Hub
+                </h3>
+                <p className="text-base text-slate-300 leading-relaxed font-light">
+                  For over a decade, we have been dedicated to transforming lives through the art of handwriting. Our programs are uniquely designed to foster cognitive development, fine motor skills, and an enduring appreciation for beautiful penmanship.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
         {/* Vision & Mission Inline — side by side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20" id="vision-mission-inline">
           {/* Vision Card */}
@@ -62,7 +141,7 @@ export default function About() {
 
                 {/* Text */}
                 <p className="text-base text-slate-300 leading-relaxed font-light mt-auto">
-                  To become India's leading handwriting education and teacher training academy by transforming handwriting into a powerful tool for confidence, creativity, communication, and lifelong learning while creating highly skilled Professional Handwriting Teachers who inspire future generations.
+                  To become India's premier education and teacher training academy by fostering confidence, creativity, and communication, while creating highly skilled professionals who inspire future generations.
                 </p>
               </div>
             </div>
@@ -110,82 +189,6 @@ export default function About() {
                     >
                       <CheckCircle2 className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
                       <span className="text-sm text-slate-300 leading-relaxed font-light">{point}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom: Image + floating badge row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" id="about-image-row">
-          {/* Image */}
-          <motion.div variants={cardVariants} className="lg:col-span-5 flex justify-center items-center relative" id="about-visual-right">
-            <div className="relative group w-full max-w-[420px]">
-              <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-brand-purple via-[#bfdbfe]/10 to-brand-cyan opacity-30 blur-2xl group-hover:opacity-60 transition-opacity duration-700" />
-              <div className="relative p-[1px] rounded-[2.5rem] bg-gradient-to-br from-white/20 to-transparent">
-                <div className="rounded-[2.5rem] overflow-hidden relative bg-[#0b041c] p-2 shadow-2xl">
-                  <div className="rounded-[2rem] overflow-hidden relative" style={{ aspectRatio: '4/3' }}>
-                    <img
-                      src="/about_handwriting_setup.png"
-                      alt="Professional Handwriting Teacher Training at Alphabet Educational Hub"
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover transition-transform duration-1000 filter saturate-[0.85] group-hover:scale-105 group-hover:saturate-100"
-                      id="concept-image"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/20 via-transparent to-brand-cyan/20 pointer-events-none mix-blend-overlay" />
-                    <div className="absolute bottom-5 left-5 right-5 bg-black/40 backdrop-blur-xl px-5 py-4 rounded-2xl border border-white/10 shadow-lg">
-                      <span className="block text-sm font-serif font-bold text-white tracking-wide">
-                        Professional Handwriting Teacher Training
-                      </span>
-                      <span className="block text-xs font-mono text-brand-cyan mt-1.5 uppercase tracking-wider">
-                        100% Placement Assistance · Since 2008
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <motion.div 
-                animate={{ y: [-8, 8, -8] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 bg-[#090814]/90 backdrop-blur-xl rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex items-center gap-3 border border-brand-purple/30 z-20"
-              >
-                <Award className="w-6 h-6 text-brand-purple" />
-                <span className="text-xs font-bold text-white tracking-widest uppercase">15+ Years Legacy</span>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Right: Additional About text */}
-          <motion.div variants={cardVariants} className="lg:col-span-7 flex flex-col gap-6" id="about-extra-content">
-            <div className="relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden">
-              <div className="glass-panel p-10 md:p-12 rounded-[2rem] bg-[#090814]/80 backdrop-blur-xl relative z-10">
-                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-[100px] opacity-20 bg-brand-cyan pointer-events-none" />
-                
-                <span className="text-[11px] font-bold text-brand-cyan uppercase tracking-[0.25em] block mb-4">
-                  About Us
-                </span>
-                <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                  India's Trusted Handwriting Education Hub
-                </h3>
-                <p className="text-base text-slate-300 leading-relaxed font-light mb-10">
-                  For over a decade, we have been dedicated to transforming lives through the art of handwriting. Our programs are uniquely designed to foster cognitive development, fine motor skills, and an enduring appreciation for beautiful penmanship.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  {[
-                    { value: '2,00,000+', label: 'Students Trained', color: 'text-brand-cyan' },
-                    { value: '20,000+', label: 'Teachers Empowered', color: 'text-brand-purple' },
-                    { value: '200+', label: 'Schools Associated', color: 'text-pink-400' },
-                    { value: '100%', label: 'Placement Support', color: 'text-emerald-400' }
-                  ].map((stat) => (
-                    <motion.div 
-                      key={stat.label}
-                      whileHover={{ y: -5 }}
-                      className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner hover:bg-white/10 hover:border-white/10 transition-colors"
-                    >
-                      <span className={`block text-2xl sm:text-3xl font-serif font-black tracking-tight ${stat.color} mb-1`}>{stat.value}</span>
-                      <span className="block text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-widest font-semibold">{stat.label}</span>
                     </motion.div>
                   ))}
                 </div>

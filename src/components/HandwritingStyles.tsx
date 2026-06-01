@@ -96,7 +96,6 @@ export default function HandwritingStyles() {
             </div>
             <div className="px-6 py-4 rounded-2xl bg-white/5 border border-brand-purple/30 flex flex-col items-center justify-center shadow-lg">
               <span className="font-serif text-xl font-bold text-white tracking-wide mb-1">Telugu</span>
-              <span className="text-[10px] text-brand-purple uppercase tracking-wider font-mono">Level 1 to Level 5</span>
             </div>
             <div className="px-6 py-4 rounded-2xl bg-white/5 border border-pink-400/30 flex flex-col items-center justify-center shadow-lg">
               <span className="font-serif text-xl font-bold text-white tracking-wide mb-1">Hindi</span>
