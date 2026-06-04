@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Download, Play, ShieldAlert, Sparkles } from 'lucide-react';
+import { X, CheckCircle2, Download, Play, ShieldAlert, Sparkles, BookOpen, Eye } from 'lucide-react';
 import BackgroundEffect from './components/BackgroundEffect';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -24,10 +24,6 @@ export default function App() {
   const [enrollSubmitted, setEnrollSubmitted] = useState(false);
   const [registrationId, setRegistrationId] = useState('');
   
-  const [brochureEmail, setBrochureEmail] = useState('');
-  const [brochureDownloading, setBrochureDownloading] = useState(false);
-  const [brochureProgress, setBrochureProgress] = useState(0);
-  const [brochureCompleted, setBrochureCompleted] = useState(false);
 
   const handleEnrollSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,34 +58,10 @@ export default function App() {
     }, 400);
   };
 
-  const handleBrochureSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!brochureEmail) return;
 
-    setBrochureDownloading(true);
-    setBrochureProgress(1);
-
-    // Simulated progress tick representing realistic, satisfying digital download
-    const interval = setInterval(() => {
-      setBrochureProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setBrochureDownloading(false);
-          setBrochureCompleted(true);
-          return 100;
-        }
-        return prev + Math.floor(Math.random() * 15 + 8);
-      });
-    }, 150);
-  };
 
   const handleBrochureClose = () => {
     setBrochureOpen(false);
-    setTimeout(() => {
-      setBrochureCompleted(false);
-      setBrochureProgress(0);
-      setBrochureEmail('');
-    }, 400);
   };
 
   return (
@@ -267,80 +239,37 @@ export default function App() {
               <X className="w-4 h-4" />
             </button>
 
-            {brochureCompleted ? (
-              <div className="text-center py-6 flex flex-col items-center justify-center" id="brochure-success-view">
-                <div className="w-16 h-16 rounded-full bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center text-emerald-400 mb-6 font-bold">
-                  <Download className="w-7 h-7" />
-                </div>
-                <h4 className="font-serif text-2xl font-black text-white">Syllabus Copysets Saved</h4>
-                <p className="text-xs text-slate-400 mt-2 font-mono">
-                  Size: 14.8 MB | Format: PDF Secure Envelope
-                </p>
-                <p className="text-xs text-slate-300 max-w-xs mt-4 leading-relaxed font-light">
-                  The complete handwriting worksheets guidelines, price templates, and school catalog file have been processed.
-                </p>
-                <button
-                  onClick={handleBrochureClose}
-                  className="w-full py-3.5 mt-8 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-emerald-500 hover:bg-emerald-600 transition-colors font-semibold"
-                >
-                  Close & Continue Reading
-                </button>
+            <div className="text-center py-6 flex flex-col items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan mb-6 font-bold">
+                <BookOpen className="w-7 h-7" />
               </div>
-            ) : (
-              <form onSubmit={handleBrochureSubmit} className="space-y-5">
-                <div>
-                  <span className="text-[10px] font-mono font-bold text-brand-cyan tracking-widest uppercase">
-                    RESOURCE PACKAGES
-                  </span>
-                  <h3 className="font-serif text-2xl font-bold tracking-tight text-white mt-1">
-                    Download Syllabus Catalog
-                  </h3>
-                  <p className="text-xs text-slate-400 font-light mt-1">
-                    Access worksheets previews and detailed structural styles outlines.
-                  </p>
-                </div>
-
-                {brochureDownloading ? (
-                  <div className="py-6 flex flex-col gap-4 text-center items-center" id="brochure-progress-view">
-                    <span className="text-xs font-semibold text-slate-300">Formulating PDF copy pack...</span>
-                    
-                    {/* Linear glass progress bar */}
-                    <div className="w-full h-2 rounded-full overflow-hidden bg-white/10 border border-white/5">
-                      <div 
-                        className="h-full bg-gradient-to-r from-brand-purple to-brand-cyan transition-all duration-150"
-                        style={{ width: `${brochureProgress}%` }}
-                      />
-                    </div>
-
-                    <span className="text-xs font-mono font-bold text-slate-400">
-                      {brochureProgress}% downloaded
-                    </span>
-                  </div>
-                ) : (
-                  <>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] font-mono font-bold text-slate-400 uppercase">Recipient Email Address</label>
-                      <input
-                        type="email"
-                        required
-                        value={brochureEmail}
-                        onChange={(e) => setBrochureEmail(e.target.value)}
-                        placeholder="e.g., student@domain.com"
-                        className="w-full bg-white/3 border border-white/10 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-brand-cyan text-white"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full py-4 rounded-xl text-center font-bold text-xs uppercase tracking-wider text-black bg-white hover:brightness-110 transition-all cursor-pointer flex items-center justify-center gap-2 font-semibold"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Prepare Catalog Copy</span>
-                    </button>
-                  </>
-                )}
-              </form>
-            )}
+              <h4 className="font-serif text-2xl font-black text-white">Alphabet Hub Brochure</h4>
+              <p className="text-xs text-slate-300 max-w-xs mt-4 leading-relaxed font-light">
+                View our complete course catalog, syllabus details, and pricing structures in our official brochure.
+              </p>
+              
+              <div className="w-full flex flex-col gap-3 mt-8">
+                <a
+                  href="/Alphabet_Brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleBrochureClose}
+                  className="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black bg-white hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Eye className="w-4 h-4" />
+                  View Brochure
+                </a>
+                <a
+                  href="/Alphabet_Brochure.pdf"
+                  download="Alphabet_Brochure.pdf"
+                  onClick={handleBrochureClose}
+                  className="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 border border-white/10 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       )}
