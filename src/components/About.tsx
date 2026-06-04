@@ -120,11 +120,7 @@ export default function About() {
             className="group relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden"
             id="about-vision-card"
           >
-            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col overflow-hidden bg-[#090814]/60">
-              {/* Background Image */}
-              <img src="/vision_light_bg.png" alt="Vision Background" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#090814]/90 via-transparent to-transparent pointer-events-none" />
-              
+            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col overflow-hidden bg-[#090814]/80">
               <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-brand-cyan/20 blur-[100px] pointer-events-none group-hover:bg-brand-cyan/30 transition-colors duration-700" />
 
               <div className="relative z-10 flex flex-col h-full">
@@ -157,11 +153,7 @@ export default function About() {
             className="group relative p-[1px] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent overflow-hidden"
             id="about-mission-card"
           >
-            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col overflow-hidden bg-[#090814]/60">
-              {/* Background Image */}
-              <img src="/mission_light_bg.png" alt="Mission Background" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#090814]/90 via-transparent to-transparent pointer-events-none" />
-
+            <div className="relative h-full glass-panel p-10 md:p-12 rounded-[2rem] flex flex-col overflow-hidden bg-[#090814]/80">
               <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-brand-purple/20 blur-[100px] pointer-events-none group-hover:bg-brand-purple/30 transition-colors duration-700" />
 
               <div className="relative z-10 flex flex-col h-full">
